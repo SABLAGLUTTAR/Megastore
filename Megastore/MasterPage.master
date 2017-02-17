@@ -18,12 +18,14 @@
         <div class="wrapper">
             <div class="top">
                 <div id="logo">
-                    <asp:Image ID="img" runat="server" ImageUrl="~/images/megastore.png" Width="200px" Height="100px" />
+                    <asp:Image ID="img" runat="server" ImageUrl="~/images/logo.png" Width="300px" Height="95px" />
+                </div>
+                <div id="triangle">
+                    
                 </div>
                 <div id="searchbar">
                     <asp:TextBox ID="search" runat="server" Width="300px"></asp:TextBox>
                     <asp:Button ID="button" Text="Search" runat="server" />
-
                 </div>
 
 

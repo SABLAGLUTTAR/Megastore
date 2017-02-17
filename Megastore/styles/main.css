@@ -9,12 +9,24 @@
     font-size: 12px;
 }
 .top{
-    height: 160px;
+    height: 127px;
     padding-bottom: 5px;
-    background-color: darkslategrey;
+    background-color: black;
     color: rgb(255,255,255);
     border-radius: 5px 5px 5px 5px;
 
+}
+
+#triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 128px 0 0 90px;
+    border-color: transparent transparent transparent #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 59%;
 }
 
 #logo{
@@ -27,7 +39,8 @@
     padding: 40px;
     text-align:center;
     float: right;
-    margin-right: 380px;
+    margin-right: 0px;
+    background-color: white;
 }
 .wrapper{
     width: 1200px;
