@@ -1,0 +1,96 @@
+﻿body, div, p, ul, li, dl, dt, dd, ol, h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, blockquote {
+    padding: 0;
+    margin: 0;
+}
+{
+    
+    background-color: rgb(237,237,237);
+    font-family: Arial,Helvetica, Sans-Serif;
+    font-size: 12px;
+}
+.top{
+    height: 160px;
+    padding-bottom: 5px;
+    background-color: darkslategrey;
+    color: rgb(255,255,255);
+    border-radius: 5px 5px 5px 5px;
+
+}
+
+#logo{
+    margin-left: 50px;
+    padding: 10px;
+    float: left;
+}
+
+#searchbar{
+    padding: 40px;
+    text-align:center;
+    float: right;
+    margin-right: 380px;
+}
+.wrapper{
+    width: 1200px;
+    margin: auto;
+}
+.clear
+{
+    clear: both;
+}
+.content{
+    width: 780px;
+    background-color: rgb(254,254,254);
+    border: 1px solid rgb(224,224,224);
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    min-height: 400px;
+    float: right;
+}
+
+.rightbar{
+    width: 200px;
+    background-color: rgb(254,254,254);
+    border: 1px solid rgb(224,224,224);
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    
+    text-align:center;
+    min-height: 400px;
+    float:right;
+}
+
+
+.menu {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 1px solid rgb(224,224,224);
+    background-color: powderblue;
+    width: 200px;
+    padding: 0px;
+    min-height: 400px;
+    color: rgb(243,243,243);
+    
+}
+
+
+
+.clear{
+    clear: both;
+}
+
+.footer{
+    height: 120px;
+    background-color: darkslategrey;
+    color: rgb(255,255,255);
+    border-radius: 5px 5px 5px 5px;
+
+}
+
+.footer h2{
+    padding: 15px;
+    text-align: center;
+}
