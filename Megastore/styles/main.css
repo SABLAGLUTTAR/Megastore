@@ -14,6 +14,7 @@
     background-color: black;
     color: rgb(255,255,255);
     border-radius: 5px 5px 5px 5px;
+    position: relative;
 
 }
 
@@ -25,8 +26,8 @@
     border-color: transparent transparent transparent #000;
     position: absolute;
     left: 0;
-    top: 10px;
-    margin-left: 35%;
+    top: 0px;
+    margin-left: 31%;
 }
 
 
