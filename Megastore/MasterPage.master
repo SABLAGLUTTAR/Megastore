@@ -18,7 +18,7 @@
         <div class="wrapper">
             <div class="top">
                 <div id="logo">
-                    <asp:Image ID="img" runat="server" ImageUrl="~/pictures/megastore.png" Width="200px" Height="100px" />
+                    <asp:Image ID="img" runat="server" ImageUrl="~/images/megastore.png" Width="200px" Height="100px" />
                 </div>
                 <div id="searchbar">
                     <asp:TextBox ID="search" runat="server" Width="300px"></asp:TextBox>
@@ -29,95 +29,94 @@
 
             </div>
 
-                  
-            
-                  <div class="topmenu">
+
+
+            <div class="topmenu">
                 <ul>
-  <li><a href="Index.aspx">Home</a></li>
-  
-  <li class="dropdown">
-    <a href="#" class="dropbtn">Books</a>
-    <div class="dropdown-content">
-      <a href="#">Children</a>
-      <a href="#">Manga</a>
-      <a href="#">Thriller</a>
-    </div>
-    
-  </li>
-  <li class="dropdown">
-    <a href="#" class="dropbtn">Movies</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    
-  </li>
-   <li class="dropdown">
-    <a href="#" class="dropbtn">Smartphones</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    
-  </li> 
-    <li class="dropdown">
-    <a href="#" class="dropbtn">Computers</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    
-  </li>
+                    <li><a href="Index.aspx">Home</a></li>
+
                     <li class="dropdown">
-    <a href="#" class="dropbtn">Games</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    
-  </li>
-</ul>
-                      </div>
-            
+                        <a href="#" class="dropbtn">Books</a>
+                        <div class="dropdown-content">
+                            <a href="#">Children</a>
+                            <a href="#">Manga</a>
+                            <a href="#">Thriller</a>
+                        </div>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Movies</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Smartphones</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Computers</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Games</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
             <div class="rightbar">
                 <asp:ContentPlaceHolder ID="rightbar" runat="server">
-                    
+
                     <div class="adbar1">
-                    <asp:AdRotator ID="AdRotator1" Height="100px" Width="100px" runat="server" AdvertisementFile="~/res/adfile.xml"  />
+                        <asp:AdRotator ID="AdRotator1" Height="100px" Width="100px" runat="server" AdvertisementFile="~/res/adfile.xml" />
                     </div>
                     <div class="adbar2">
-                    <asp:AdRotator ID="AdRotator2" Height="100px" Width="100px"  runat="server" AdvertisementFile="~/res/adfile.xml" />
+                        <asp:AdRotator ID="AdRotator2" Height="100px" Width="100px" runat="server" AdvertisementFile="~/res/adfile.xml" />
                     </div>
                 </asp:ContentPlaceHolder>
             </div>
-            
 
-            
+
+
             <div class="content">
                 <asp:ContentPlaceHolder ID="contentBody" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-            
+
             <div class="menu">
-                
             </div>
 
 
 
-            
+
             <div class="clear"></div>
 
             <div class="clear"></div>
             <div class="footer">
-                <h2>Copyright by Linus</h2>
+                <h2>Copyright by Sabla Gluttar</h2>
             </div>
 
         </div>
-            
+
     </form>
 </body>
 </html>
