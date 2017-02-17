@@ -23,9 +23,14 @@
                 <div id="triangle">
                     
                 </div>
-                <div id="searchbar">
-                    <asp:TextBox ID="search" runat="server" Width="300px"></asp:TextBox>
-                    <asp:Button ID="button" Text="Search" runat="server" />
+
+                <div id="headerContainer">
+                    <p class="search">
+                    <asp:TextBox ID="search" runat="server" Width="200px"></asp:TextBox>
+                    <asp:Button ID="button" Text="Search" runat="server" /> </p> 
+                    <p class="login">
+                    <asp:Button ID="login" Text="Login" runat="server" />
+                    <asp:Button ID="register" Text="Register" runat="server" /> </p> 
                 </div>
 
 

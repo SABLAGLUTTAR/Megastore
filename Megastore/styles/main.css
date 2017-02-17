@@ -25,9 +25,11 @@
     border-color: transparent transparent transparent #000;
     position: absolute;
     left: 0;
-    top: 0;
-    margin-left: 59%;
+    top: 10px;
+    margin-left: 35%;
 }
+
+
 
 #logo{
     margin-left: 50px;
@@ -35,13 +37,25 @@
     float: left;
 }
 
-#searchbar{
+#headerContainer{
     padding: 40px;
-    text-align:center;
-    float: right;
-    margin-right: 0px;
+    text-align: center;
+    margin-left: 31%;
     background-color: white;
 }
+
+.search {
+
+    margin-right: 20%;
+
+}
+
+.login {
+    float: right;
+    margin-right: 5%;
+
+}
+
 .wrapper{
     width: 1200px;
     margin: auto;
