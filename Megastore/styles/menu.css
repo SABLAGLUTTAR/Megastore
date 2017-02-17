@@ -3,8 +3,11 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #000;
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+    font-size: 13px;
+    border-top: 3px solid;
+    border-color: red;
 }
 
 ul {
@@ -12,7 +15,7 @@ ul {
     margin-left: 300px;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #000;
 }
 
 li {
@@ -28,7 +31,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    color: red;
 }
 
 li.dropdown {
@@ -36,7 +39,7 @@ li.dropdown {
 }
 
 .dropdown-content {
-    background: #292929;
+    background: #000;
     color: #fff;
     display: none;
     position: absolute;
@@ -55,7 +58,7 @@ li.dropdown {
 }
 
 .dropdown-content a:hover {
-    color: #f1f1f1
+    color: red;
 
 }
 
