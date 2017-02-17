@@ -11,7 +11,24 @@ namespace Megastore.pages.store
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            testLabel.Text = "This is the content of: " + Request.QueryString["category"];
+           
+
+            if (Request.QueryString["category"].Equals("Games")){
+                testLabel.Text="Här kommer allt i games att hamna";
+            }
+
+            if (Request.QueryString["category"].Equals("Smartphones"))
+            {
+                testLabel.Text = "Här kommer allt i smartphones att hamna";
+            }
+            if (Request.QueryString["category"].Equals("Books"))
+            {
+                testLabel.Text = "Här kommer allt i books att hamna";
+            }
+            if (Request.QueryString["category"].Equals("Computers"))
+            {
+                testLabel.Text = "Här kommer allt i computers att hamna";
+            }
         }
     }
 }
