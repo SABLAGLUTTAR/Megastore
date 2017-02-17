@@ -45,47 +45,47 @@
                     <li class="dropdown">
                         <a href="Products.aspx?category=Books" class="dropbtn">Books</a>
                         <div class="dropdown-content">
-                            <a href="Products.aspx?category=books.Children">Children</a>
-                            <a href="Products.aspx?category=books.Manga">Manga</a>
-                            <a href="Products.aspx?category=books.Thriller">Thriller</a>
+                            <a href="Products.aspx?category=Books&subcat=Children">Children</a>
+                            <a href="Products.aspx?category=Books&subcat=Manga">Manga</a>
+                            <a href="Products.aspx?category=Books&subcat=Thriller">Thriller</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a href="Products.aspx?category=Movies" class="dropbtn">Movies</a>
                         <div class="dropdown-content">
-                            <a href="Products.aspx?category=movies.Children">Children</a>
-                            <a href="Products.aspx?category=movies.Action">Action</a>
-                            <a href="Products.aspx?category=movies.Thriller">Thriller</a>
+                            <a href="Products.aspx?category=Movies&subcat=Children">Children</a>
+                            <a href="Products.aspx?category=Movies&subcat=Action">Action</a>
+                            <a href="Products.aspx?category=Movies&subcat=Thriller">Thriller</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a href="Products.aspx?category=Smartphones" class="dropbtn">Smartphones</a>
                         <div class="dropdown-content">
-                            <a href="Products.aspx?category=smartphones.Iphone">Iphone</a>
-                            <a href="Products.aspx?category=smartphones.Android">Android</a>
-                            <a href="Products.aspx?category=smartphones.Blackberry">Blackberry</a>
+                            <a href="Products.aspx?category=Smartphones&subcat=Iphone">Iphone</a>
+                            <a href="Products.aspx?category=Smartphones&subcat=Android">Android</a>
+                            <a href="Products.aspx?category=Smartphones&subcat=Blackberry">Blackberry</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a href="Products.aspx?category=Computers" class="dropbtn">Computers</a>
                         <div class="dropdown-content">
-                            <a href="Products.aspx?category=computers.Processor">Processors</a>
-                            <a href="Products.aspx?category=computers.Graphics">Graphics card</a>
-                            <a href="Products.aspx?category=computers.Motherboard">Motherboard</a>
-                            <a href="Products.aspx?category=computers.Ram">RAM</a>
-                            <a href="Products.aspx?category=computers.Harddrive">HDD,SSD</a>
+                            <a href="Products.aspx?category=Computers&subcat=Processor">Processors</a>
+                            <a href="Products.aspx?category=Computers&subcat=Graphics">Graphics card</a>
+                            <a href="Products.aspx?category=Computers&subcat=Motherboard">Motherboard</a>
+                            <a href="Products.aspx?category=Computers&subcat=Ram">RAM</a>
+                            <a href="Products.aspx?category=Computers&subcat=Harddrive">HDD,SSD</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a href="Products.aspx?category=Games" class="dropbtn">Games</a>
                         <div class="dropdown-content">
-                            <a href="Products.aspx?category=games.Rpg">RPG</a>
-                            <a href="Products.aspx?category=games.Fps">FPS</a>
-                            <a href="Products.aspx?category=games.Strategy">Strategy</a>
+                            <a href="Products.aspx?category=Games&subcat=Rpg">RPG</a>
+                            <a href="Products.aspx?category=Games&subcat=Fps">FPS</a>
+                            <a href="Products.aspx?category=Games&subcat=Strategy">Strategy</a>
                         </div>
 
                     </li>
