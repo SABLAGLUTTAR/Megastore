@@ -13,111 +13,121 @@ namespace Megastore.pages.store
         {
            
             //Spel
-            if (Request.QueryString["category"].Equals("Games") || Request.QueryString["category"].Contains("games."))
+            if (Request.QueryString["category"].Equals("Games"))
             {
                 testLabel.Text="Här kommer allt i games att hamna";
-                if (Request.QueryString["category"].Equals("games.Fps"))
+                if (Request.QueryString["subcat"].Equals("Fps"))
                 {
                     testLabel.Text = "Här kommer allt i fps att hamna";
                 }
-                if (Request.QueryString["category"].Equals("games.Rpg"))
+                if (Request.QueryString["subcat"].Equals("Rpg"))
                 {
                     testLabel.Text = "Här kommer allt i rpg att hamna";
                 }
-                if (Request.QueryString["category"].Equals("games.Strategy"))
+                if (Request.QueryString["subcat"].Equals("Strategy"))
                 {
                     testLabel.Text = "Här kommer allt i strategi att hamna";
                 }
             }
 
             //Smartphones
-            if (Request.QueryString["category"].Equals("Smartphones") || Request.QueryString["category"].Contains("smartphones."))
+            if (Request.QueryString["category"].Equals("Smartphones"))
             {
                 testLabel.Text = "Här kommer allt i smartphones att hamna";
-                if (Request.QueryString["category"].Equals("smartphones.Iphone"))
+                if (Request.QueryString["subcat"] != null)
                 {
-                    testLabel.Text = "Här kommer allt i iphone att hamna";
-                }
-                if (Request.QueryString["category"].Equals("smartphones.Android"))
-                {
-                    testLabel.Text = "Här kommer allt i android att hamna";
-                }
-                if (Request.QueryString["category"].Equals("smartphones.Blackberry"))
-                {
-                    testLabel.Text = "Här kommer allt i blackberry att hamna";
+                    if (Request.QueryString["subcat"].Equals("Iphone"))
+                    {
+                        testLabel.Text = "Här kommer allt i iphone att hamna";
+                    }
+                    if (Request.QueryString["subcat"].Equals("Android"))
+                    {
+                        testLabel.Text = "Här kommer allt i android att hamna";
+                    }
+                    if (Request.QueryString["subcat"].Equals("Blackberry"))
+                    {
+                        testLabel.Text = "Här kommer allt i blackberry att hamna";
+                    }
                 }
 
             }
 
             //Böcker
-            if (Request.QueryString["category"].Equals("Books") || Request.QueryString["category"].Contains("books."))
+            if (Request.QueryString["category"].Equals("Books"))
             {
                 testLabel.Text = "Här kommer allt i books att hamna";
-                if (Request.QueryString["category"].Equals("books.Manga"))
+
+                if (Request.QueryString["subcat"] != null) { 
+                if (Request.QueryString["subcat"].Equals("Manga"))
                 {
                     testLabel.Text = "Här kommer allt i manga att hamna";
                 }
-                if (Request.QueryString["category"].Equals("books.Children"))
+                if (Request.QueryString["subcat"].Equals("Children"))
                 {
                     testLabel.Text = "Här kommer allt i children(books) att hamna";
                 }
-                if (Request.QueryString["category"].Equals("books.Thriller"))
+                if (Request.QueryString["subcat"].Equals("Thriller"))
                 {
                     testLabel.Text = "Här kommer allt i thriller(books) att hamna";
                 }
-                
+                }
 
             }
 
             //Dator
-            if (Request.QueryString["category"].Equals("Computers")|| Request.QueryString["category"].Contains("computers."))
+            if (Request.QueryString["category"].Equals("Computers"))
             {
                 testLabel.Text = "Här kommer allt i computers att hamna";
-
-                if (Request.QueryString["category"].Equals("computers.Processor"))
+                if (Request.QueryString["subcat"] != null)
                 {
-                    testLabel.Text = "Här kommer allt i processor att hamna";
-                }
+                    if (Request.QueryString["subcat"].Equals("Processor"))
+                    {
+                        testLabel.Text = "Här kommer allt i processor att hamna";
+                    }
 
-                if (Request.QueryString["category"].Equals("computers.Graphics"))
-                {
-                    testLabel.Text = "Här kommer allt i Graphics att hamna";
-                }
+                    if (Request.QueryString["subcat"].Equals("Graphics"))
+                    {
+                        testLabel.Text = "Här kommer allt i Graphics att hamna";
+                    }
 
-                if (Request.QueryString["category"].Equals("computers.Ram"))
-                {
-                    testLabel.Text = "Här kommer allt i RAM att hamna";
-                }
+                    if (Request.QueryString["subcat"].Equals("Ram"))
+                    {
+                        testLabel.Text = "Här kommer allt i RAM att hamna";
+                    }
 
-                if (Request.QueryString["category"].Equals("computers.Motherboard"))
-                {
-                    testLabel.Text = "Här kommer allt i motherboard att hamna";
-                }
+                    if (Request.QueryString["subcat"].Equals("Motherboard"))
+                    {
+                        testLabel.Text = "Här kommer allt i motherboard att hamna";
+                    }
 
-                if (Request.QueryString["category"].Equals("computers.Harddrive"))
-                {
-                    testLabel.Text = "Här kommer allt i hdd/ssd att hamna";
+                    if (Request.QueryString["subcat"].Equals("Harddrive"))
+                    {
+                        testLabel.Text = "Här kommer allt i hdd/ssd att hamna";
+                    }
                 }
             }
 
             //Filmer
-            if (Request.QueryString["category"].Equals("Movies") || Request.QueryString["category"].Contains("movies."))
+            if (Request.QueryString["category"].Equals("Movies"))
             {
                 testLabel.Text = "Här kommer allt i Movies att hamna";
-
-                if (Request.QueryString["category"].Equals("movies.Action"))
+                if (Request.QueryString["subcat"] != null)
                 {
-                    testLabel.Text = "Här kommer allt i action att hamna";
-                }
 
-                if (Request.QueryString["category"].Equals("movies.Thriller"))
-                {
-                    testLabel.Text = "Här kommer allt i thriller(movies) att hamna";
-                }
+                    if (Request.QueryString["subcat"].Equals("Action"))
+                    {
+                        testLabel.Text = "Här kommer allt i action att hamna";
+                    }
 
-                if (Request.QueryString["category"].Equals("movies.Children"))
-                {
-                    testLabel.Text = "Här kommer allt i children(movies) att hamna";
+                    if (Request.QueryString["subcat"].Equals("Thriller"))
+                    {
+                        testLabel.Text = "Här kommer allt i thriller(movies) att hamna";
+                    }
+
+                    if (Request.QueryString["subcat"].Equals("Children"))
+                    {
+                        testLabel.Text = "Här kommer allt i children(movies) att hamna";
+                    }
                 }
             }
         }
