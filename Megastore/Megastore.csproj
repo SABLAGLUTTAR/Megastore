@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -102,13 +106,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ads\computer\amd.png" />
+    <Content Include="ads\computer\comAd.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ads\computer\intel.png" />
+    <Content Include="ads\computer\nvidia.jpeg" />
     <Content Include="images\megastore.png" />
     <Content Include="IndexTest.aspx" />
+    <Content Include="LoginUser.ascx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterPage.master" />
+    <Content Include="pages\account\hej.txt" />
     <Content Include="pages\Index.aspx" />
     <Content Include="pages\Products.aspx" />
     <Content Include="pages\Selectedproduct.aspx" />
@@ -138,6 +150,13 @@
     <Compile Include="IndexTest.aspx.designer.cs">
       <DependentUpon>IndexTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoginUser.ascx.cs">
+      <DependentUpon>LoginUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginUser.ascx.designer.cs">
+      <DependentUpon>LoginUser.ascx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.master.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,7 +184,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ads\books\" />
+    <Folder Include="ads\games\" />
+    <Folder Include="ads\movies\" />
+    <Folder Include="ads\smartphones\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

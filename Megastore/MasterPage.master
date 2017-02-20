@@ -1,5 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
+<%@ Register Src="~/LoginUser.ascx" TagPrefix="uc1" TagName="LoginUser" %>
+
+
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,33 +13,48 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
+    
     <link href="Styles/main.css" rel="stylesheet" />
     <link href="Styles/menu.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
+   
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
         <div class="wrapper">
             <div class="top">
                 <div id="logo">
                     <asp:Image ID="img" runat="server" ImageUrl="~/images/logo.png" Width="300px" Height="95px" />
                 </div>
                 <div id="triangle">
-                    
+                      
                 </div>
+                
 
+                
                 <div id="headerContainer">
+                    
                     <p class="search">
                     <asp:TextBox ID="search" runat="server" Width="200px"></asp:TextBox>
-                    <asp:Button ID="button" Text="Search" runat="server" /> </p> 
-                    <p class="login">
-                    <asp:Button ID="login" Text="Login" runat="server" />
-                    <asp:Button ID="register" Text="Register" runat="server" /> </p> 
+                    <asp:Button ID="button" Text="Search" runat="server" /> </p>
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <LoggedInTemplate>
+                            Congratulations. You are now Logged in.
+                        </LoggedInTemplate>
+                        <AnonymousTemplate>
+                            Please click Login to continue.
+                            <uc1:loginuser runat="server" id="LoginUser" />
+                        </AnonymousTemplate>
+                    </asp:LoginView>
                 </div>
-
-
             </div>
+
+
+            
 
 
 
@@ -91,15 +111,18 @@
                     </li>
                 </ul>
             </div>
-
+            
             <div class="rightbar">
                 <asp:ContentPlaceHolder ID="rightbar" runat="server">
 
+                    <div class="img1">
+                    <asp:AdRotator ID="AdRotator3" Height="133px" Width="200px" runat="server" AdvertisementFile="ads/computer/comAd.xml"  />
+                    </div>
                     <div class="adbar1">
-                        <asp:AdRotator ID="AdRotator1" Height="100px" Width="100px" runat="server" AdvertisementFile="~/res/adfile.xml" />
+                    <asp:AdRotator ID="AdRotator1" runat="server" Height="133px" Width="200px" AdvertisementFile="ads/computer/comAd.xml"  />
                     </div>
                     <div class="adbar2">
-                        <asp:AdRotator ID="AdRotator2" Height="100px" Width="100px" runat="server" AdvertisementFile="~/res/adfile.xml" />
+                    <asp:AdRotator ID="AdRotator2" runat="server" Height="133px" Width="200px" AdvertisementFile="ads/computer/comAd.xml" />
                     </div>
                 </asp:ContentPlaceHolder>
             </div>
@@ -127,5 +150,7 @@
         </div>
 
     </form>
+
+    
 </body>
 </html>

@@ -65,3 +65,8 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.loginfields{
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+}

@@ -3,12 +3,7 @@
     margin: 0;
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
 }
-{
-    
-    background-color: rgb(237,237,237);
-    font-family: Arial,Helvetica, Sans-Serif;
-    font-size: 12px;
-}
+
 .top{
     height: 127px;
     padding-bottom: 5px;
@@ -16,7 +11,7 @@
     color: rgb(255,255,255);
     border-radius: 5px 5px 5px 5px;
     position: relative;
-
+    
 }
 
 #triangle {
@@ -37,6 +32,7 @@
     margin-left: 50px;
     padding: 10px;
     float: left;
+    width: 372px;
 }
 
 #headerContainer{
@@ -48,21 +44,45 @@
 
 .search {
 
-    margin-right: 20%;
-
+    
+    width: 50%;
 }
 
-.login {
+#Loginview1 {
+    
+    
     float: right;
-    margin-right: 5%;
-
+    padding:10px;
+   
+    text-align:right;
+   
 }
+
+.modalBackground {
+	background-color:Black;
+	filter:alpha(opacity=80);
+	opacity:0.7;
+}
+.modalPopup {
+    border: 2px solid red;
+	background-color:Black;
+	border-width:3px;
+	text-align:right;
+	padding-bottom:30px;
+	width:300px;
+	height:150px;
+    color:rgb(255,255,255);
+    border-radius: 5px 5px 5px 5px;
+}
+
+
 
 .wrapper{
     width: 1200px;
-    margin: auto;
     padding: 10px;
-
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
 }
 .clear
 {

@@ -15,7 +15,10 @@ namespace Megastore.pages.store
             //Spel
             if (Request.QueryString["category"].Equals("Games"))
             {
-                testLabel.Text="Här kommer allt i games att hamna";
+                testLabel.Text = "Här kommer allt i games att hamna";
+                if (Request.QueryString["subcat"] != null)
+                {
+                    
                 if (Request.QueryString["subcat"].Equals("Fps"))
                 {
                     testLabel.Text = "Här kommer allt i fps att hamna";
@@ -27,6 +30,7 @@ namespace Megastore.pages.store
                 if (Request.QueryString["subcat"].Equals("Strategy"))
                 {
                     testLabel.Text = "Här kommer allt i strategi att hamna";
+                }
                 }
             }
 
