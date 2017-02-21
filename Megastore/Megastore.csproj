@@ -106,12 +106,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ads\computer\amd.png" />
-    <Content Include="ads\computer\comAd.xml">
+    <Content Include="ads\amd.png" />
+    <Content Include="ads\comAd.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ads\computer\intel.png" />
-    <Content Include="ads\computer\nvidia.jpeg" />
+    <Content Include="ads\intel.png" />
+    <Content Include="ads\nvidia.jpeg" />
     <Content Include="images\megastore.png" />
     <Content Include="IndexTest.aspx" />
     <Content Include="LoginUser.ascx" />
@@ -184,12 +184,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ads\books\" />
-    <Folder Include="ads\games\" />
-    <Folder Include="ads\movies\" />
-    <Folder Include="ads\smartphones\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

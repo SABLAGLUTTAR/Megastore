@@ -115,15 +115,34 @@
             <div class="rightbar">
                 <asp:ContentPlaceHolder ID="rightbar" runat="server">
 
-                    <div class="img1">
-                    <asp:AdRotator ID="AdRotator3" Height="133px" Width="200px" runat="server" AdvertisementFile="ads/computer/comAd.xml"  />
-                    </div>
-                    <div class="adbar1">
-                    <asp:AdRotator ID="AdRotator1" runat="server" Height="133px" Width="200px" AdvertisementFile="ads/computer/comAd.xml"  />
-                    </div>
-                    <div class="adbar2">
-                    <asp:AdRotator ID="AdRotator2" runat="server" Height="133px" Width="200px" AdvertisementFile="ads/computer/comAd.xml" />
-                    </div>
+                    <asp:Timer ID="Timer1" Interval="10000" runat="server" />
+
+                    <asp:UpdatePanel ID="up1" runat="server">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                        </Triggers>
+                        <ContentTemplate>
+                            <asp:AdRotator
+                                ID="AdRotator1"
+                                AdvertisementFile="ads/comAd.xml"
+                                
+                                runat="server"
+                                Height="128px" Width="200px"  />
+                            <asp:AdRotator
+                                ID="AdRotator2"
+                                AdvertisementFile="ads/comAd.xml"
+                                
+                                runat="server"
+                                Height="128px" Width="200px"  />
+                            <asp:AdRotator
+                                ID="AdRotator3"
+                                AdvertisementFile="ads/comAd.xml"
+                                
+                                runat="server"
+                                Height="128px" Width="200px"  />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+             
                 </asp:ContentPlaceHolder>
             </div>
 
