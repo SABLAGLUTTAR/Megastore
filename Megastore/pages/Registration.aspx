@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Megastore.pages.Registration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Megastore.pages.Registration" %>
 
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
