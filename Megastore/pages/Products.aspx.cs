@@ -13,7 +13,7 @@ namespace Megastore.pages.store
         {
            
             //Spel
-            if (Request.QueryString["category"].Equals("Games"))
+            if (Request.QueryString["category"].Equals("Game"))
             {
                 testLabel.Text = "Här kommer allt i games att hamna";
                 if (Request.QueryString["subcat"] != null)
@@ -23,7 +23,7 @@ namespace Megastore.pages.store
                 {
                     testLabel.Text = "Här kommer allt i fps att hamna";
                 }
-                if (Request.QueryString["subcat"].Equals("Rpg"))
+                if (Request.QueryString["subcat"].Equals("RPG"))
                 {
                     testLabel.Text = "Här kommer allt i rpg att hamna";
                 }
@@ -35,7 +35,7 @@ namespace Megastore.pages.store
             }
 
             //Smartphones
-            if (Request.QueryString["category"].Equals("Smartphones"))
+            if (Request.QueryString["category"].Equals("Smartphone"))
             {
                 testLabel.Text = "Här kommer allt i smartphones att hamna";
                 if (Request.QueryString["subcat"] != null)
@@ -57,7 +57,7 @@ namespace Megastore.pages.store
             }
 
             //Böcker
-            if (Request.QueryString["category"].Equals("Books"))
+            if (Request.QueryString["category"].Equals("Book"))
             {
                 testLabel.Text = "Här kommer allt i books att hamna";
 
@@ -79,8 +79,9 @@ namespace Megastore.pages.store
             }
 
             //Dator
-            if (Request.QueryString["category"].Equals("Computers"))
+            if (Request.QueryString["category"].Equals("Computer"))
             {
+                 
                 testLabel.Text = "Här kommer allt i computers att hamna";
                 if (Request.QueryString["subcat"] != null)
                 {
@@ -112,7 +113,7 @@ namespace Megastore.pages.store
             }
 
             //Filmer
-            if (Request.QueryString["category"].Equals("Movies"))
+            if (Request.QueryString["category"].Equals("Movie"))
             {
                 testLabel.Text = "Här kommer allt i Movies att hamna";
                 if (Request.QueryString["subcat"] != null)
@@ -135,5 +136,7 @@ namespace Megastore.pages.store
                 }
             }
         }
+
+      
     }
 }

@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="megastoreModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="65" />
+          <Property Name="last_name" Type="varchar" MaxLength="65" />
+          <Property Name="admin_password" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="categories">
+          <Key>
+            <PropertyRef Name="categories_id" />
+          </Key>
+          <Property Name="categories_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_email" />
+          </Key>
+          <Property Name="first_name" Type="varchar" MaxLength="65" />
+          <Property Name="last_name" Type="varchar" MaxLength="65" />
+          <Property Name="customer_address" Type="varchar" MaxLength="128" />
+          <Property Name="customer_email" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="customer_password" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="payment_type">
+          <Key>
+            <PropertyRef Name="payment_type_id" />
+          </Key>
+          <Property Name="payment_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type_name" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_name" Type="varchar" MaxLength="64" />
+          <Property Name="product_description" Type="varchar" MaxLength="255" />
+          <Property Name="product_type_idproduct_type" Type="int" Nullable="false" />
+          <Property Name="unit" Type="varchar" MaxLength="16" />
+          <Property Name="price_per_unit" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="image_url" Type="varchar" MaxLength="128" />
+          <Property Name="categories_catogories_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_type">
+          <Key>
+            <PropertyRef Name="product_type_id" />
+          </Key>
+          <Property Name="product_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type_name" Type="varchar" MaxLength="65" />
+        </EntityType>
+        <EntityType Name="shipment">
+          <Key>
+            <PropertyRef Name="shipment_id" />
+          </Key>
+          <Property Name="shipment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="time_created" Type="timestamp" Precision="0" />
+          <Property Name="shipping_address" Type="varchar" MaxLength="65" />
+          <Property Name="billing_address" Type="varchar" MaxLength="65" />
+          <Property Name="delivery_cost" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="discount" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="final_price" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="customer_customer_email" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="payment_type_payment_type_id" Type="int" Nullable="false" />
+          <Property Name="shipment_type_sipment_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shipment_details">
+          <Key>
+            <PropertyRef Name="shipment_details_id" />
+          </Key>
+          <Property Name="shipment_details_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quantity" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="product_product_id" Type="int" Nullable="false" />
+          <Property Name="shipment_shipment_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shipment_type">
+          <Key>
+            <PropertyRef Name="sipment_type_id" />
+          </Key>
+          <Property Name="sipment_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type_name" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="stock">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="in_stock" Type="decimal" Precision="8" Scale="0" />
+          <Property Name="last_update_time" Type="timestamp" Precision="0" />
+        </EntityType>
+        <Association Name="fk_product_categories1">
+          <End Role="categories" Type="Self.categories" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="categories_id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categories_catogories_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product_product_type">
+          <End Role="product_type" Type="Self.product_type" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_type">
+              <PropertyRef Name="product_type_id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="product_type_idproduct_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_customer1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_email" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="customer_customer_email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_details_product1">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="shipment_details" Type="Self.shipment_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="shipment_details">
+              <PropertyRef Name="product_product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_details_shipment1">
+          <End Role="shipment" Type="Self.shipment" Multiplicity="1" />
+          <End Role="shipment_details" Type="Self.shipment_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shipment">
+              <PropertyRef Name="shipment_id" />
+            </Principal>
+            <Dependent Role="shipment_details">
+              <PropertyRef Name="shipment_shipment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_payment_type1">
+          <End Role="payment_type" Type="Self.payment_type" Multiplicity="1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="payment_type">
+              <PropertyRef Name="payment_type_id" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="payment_type_payment_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_shipment_type1">
+          <End Role="shipment_type" Type="Self.shipment_type" Multiplicity="1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shipment_type">
+              <PropertyRef Name="sipment_type_id" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="shipment_type_sipment_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_product1">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="stock" Type="Self.stock" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="stock">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="megastoreModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="categories" EntityType="Self.categories" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="payment_type" EntityType="Self.payment_type" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="product_type" EntityType="Self.product_type" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="shipment" EntityType="Self.shipment" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="shipment_details" EntityType="Self.shipment_details" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="shipment_type" EntityType="Self.shipment_type" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="stock" EntityType="Self.stock" Schema="mydb" store:Type="Tables" />
+          <AssociationSet Name="fk_product_categories1" Association="Self.fk_product_categories1">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_product_type" Association="Self.fk_product_product_type">
+            <End Role="product_type" EntitySet="product_type" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_customer1" Association="Self.fk_shipment_customer1">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="shipment" EntitySet="shipment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_details_product1" Association="Self.fk_shipment_details_product1">
+            <End Role="product" EntitySet="product" />
+            <End Role="shipment_details" EntitySet="shipment_details" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_details_shipment1" Association="Self.fk_shipment_details_shipment1">
+            <End Role="shipment" EntitySet="shipment" />
+            <End Role="shipment_details" EntitySet="shipment_details" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_payment_type1" Association="Self.fk_shipment_payment_type1">
+            <End Role="payment_type" EntitySet="payment_type" />
+            <End Role="shipment" EntitySet="shipment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_shipment_type1" Association="Self.fk_shipment_shipment_type1">
+            <End Role="shipment_type" EntitySet="shipment_type" />
+            <End Role="shipment" EntitySet="shipment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_product1" Association="Self.fk_stock_product1">
+            <End Role="product" EntitySet="product" />
+            <End Role="stock" EntitySet="stock" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="megastoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="admin_password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categories_id" />
+          </Key>
+          <Property Name="categories_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="products" Relationship="Self.fk_product_categories1" FromRole="categories" ToRole="product" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customer_email" />
+          </Key>
+          <Property Name="first_name" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="customer_address" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="customer_email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shipments" Relationship="Self.fk_shipment_customer1" FromRole="customer" ToRole="shipment" />
+        </EntityType>
+        <EntityType Name="payment_type">
+          <Key>
+            <PropertyRef Name="payment_type_id" />
+          </Key>
+          <Property Name="payment_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shipments" Relationship="Self.fk_shipment_payment_type1" FromRole="payment_type" ToRole="shipment" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="product_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="product_type_idproduct_type" Type="Int32" Nullable="false" />
+          <Property Name="unit" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="price_per_unit" Type="Decimal" />
+          <Property Name="image_url" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="categories_catogories_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="category" Relationship="Self.fk_product_categories1" FromRole="product" ToRole="categories" />
+          <NavigationProperty Name="product_type" Relationship="Self.fk_product_product_type" FromRole="product" ToRole="product_type" />
+          <NavigationProperty Name="shipment_details" Relationship="Self.fk_shipment_details_product1" FromRole="product" ToRole="shipment_details" />
+          <NavigationProperty Name="stock" Relationship="Self.fk_stock_product1" FromRole="product" ToRole="stock" />
+        </EntityType>
+        <EntityType Name="product_type">
+          <Key>
+            <PropertyRef Name="product_type_id" />
+          </Key>
+          <Property Name="product_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type_name" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="products" Relationship="Self.fk_product_product_type" FromRole="product_type" ToRole="product" />
+        </EntityType>
+        <EntityType Name="shipment">
+          <Key>
+            <PropertyRef Name="shipment_id" />
+          </Key>
+          <Property Name="shipment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time_created" Type="DateTime" />
+          <Property Name="shipping_address" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="billing_address" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="delivery_cost" Type="Decimal" />
+          <Property Name="discount" Type="Decimal" />
+          <Property Name="final_price" Type="Decimal" />
+          <Property Name="customer_customer_email" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="payment_type_payment_type_id" Type="Int32" Nullable="false" />
+          <Property Name="shipment_type_sipment_type_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.fk_shipment_customer1" FromRole="shipment" ToRole="customer" />
+          <NavigationProperty Name="payment_type" Relationship="Self.fk_shipment_payment_type1" FromRole="shipment" ToRole="payment_type" />
+          <NavigationProperty Name="shipment_details" Relationship="Self.fk_shipment_details_shipment1" FromRole="shipment" ToRole="shipment_details" />
+          <NavigationProperty Name="shipment_type" Relationship="Self.fk_shipment_shipment_type1" FromRole="shipment" ToRole="shipment_type" />
+        </EntityType>
+        <EntityType Name="shipment_details">
+          <Key>
+            <PropertyRef Name="shipment_details_id" />
+          </Key>
+          <Property Name="shipment_details_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quantity" Type="Decimal" />
+          <Property Name="product_product_id" Type="Int32" Nullable="false" />
+          <Property Name="shipment_shipment_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="product" Relationship="Self.fk_shipment_details_product1" FromRole="shipment_details" ToRole="product" />
+          <NavigationProperty Name="shipment" Relationship="Self.fk_shipment_details_shipment1" FromRole="shipment_details" ToRole="shipment" />
+        </EntityType>
+        <EntityType Name="shipment_type">
+          <Key>
+            <PropertyRef Name="sipment_type_id" />
+          </Key>
+          <Property Name="sipment_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type_name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="shipments" Relationship="Self.fk_shipment_shipment_type1" FromRole="shipment_type" ToRole="shipment" />
+        </EntityType>
+        <EntityType Name="stock">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="in_stock" Type="Decimal" />
+          <Property Name="last_update_time" Type="DateTime" />
+          <NavigationProperty Name="product" Relationship="Self.fk_stock_product1" FromRole="stock" ToRole="product" />
+        </EntityType>
+        <Association Name="fk_product_categories1">
+          <End Role="categories" Type="Self.category" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="categories_id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categories_catogories_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_customer1">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customer_email" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="customer_customer_email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_payment_type1">
+          <End Role="payment_type" Type="Self.payment_type" Multiplicity="1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="payment_type">
+              <PropertyRef Name="payment_type_id" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="payment_type_payment_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_product_product_type">
+          <End Role="product_type" Type="Self.product_type" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product_type">
+              <PropertyRef Name="product_type_id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="product_type_idproduct_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_details_product1">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="shipment_details" Type="Self.shipment_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="shipment_details">
+              <PropertyRef Name="product_product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_product1">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="stock" Type="Self.stock" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="stock">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_details_shipment1">
+          <End Role="shipment" Type="Self.shipment" Multiplicity="1" />
+          <End Role="shipment_details" Type="Self.shipment_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shipment">
+              <PropertyRef Name="shipment_id" />
+            </Principal>
+            <Dependent Role="shipment_details">
+              <PropertyRef Name="shipment_shipment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shipment_shipment_type1">
+          <End Role="shipment_type" Type="Self.shipment_type" Multiplicity="1" />
+          <End Role="shipment" Type="Self.shipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="shipment_type">
+              <PropertyRef Name="sipment_type_id" />
+            </Principal>
+            <Dependent Role="shipment">
+              <PropertyRef Name="shipment_type_sipment_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mydbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="payment_type" EntityType="Self.payment_type" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="product_type" EntityType="Self.product_type" />
+          <EntitySet Name="shipments" EntityType="Self.shipment" />
+          <EntitySet Name="shipment_details" EntityType="Self.shipment_details" />
+          <EntitySet Name="shipment_type" EntityType="Self.shipment_type" />
+          <EntitySet Name="stocks" EntityType="Self.stock" />
+          <AssociationSet Name="fk_product_categories1" Association="Self.fk_product_categories1">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_customer1" Association="Self.fk_shipment_customer1">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="shipment" EntitySet="shipments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_payment_type1" Association="Self.fk_shipment_payment_type1">
+            <End Role="payment_type" EntitySet="payment_type" />
+            <End Role="shipment" EntitySet="shipments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_product_product_type" Association="Self.fk_product_product_type">
+            <End Role="product_type" EntitySet="product_type" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_details_product1" Association="Self.fk_shipment_details_product1">
+            <End Role="product" EntitySet="products" />
+            <End Role="shipment_details" EntitySet="shipment_details" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_product1" Association="Self.fk_stock_product1">
+            <End Role="product" EntitySet="products" />
+            <End Role="stock" EntitySet="stocks" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_details_shipment1" Association="Self.fk_shipment_details_shipment1">
+            <End Role="shipment" EntitySet="shipments" />
+            <End Role="shipment_details" EntitySet="shipment_details" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shipment_shipment_type1" Association="Self.fk_shipment_shipment_type1">
+            <End Role="shipment_type" EntitySet="shipment_type" />
+            <End Role="shipment" EntitySet="shipments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="megastoreModelStoreContainer" CdmEntityContainer="mydbEntities">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="megastoreModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="megastoreModel.category">
+              <MappingFragment StoreEntitySet="categories">
+                <ScalarProperty Name="categories_id" ColumnName="categories_id" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="megastoreModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="customer_email" ColumnName="customer_email" />
+                <ScalarProperty Name="customer_password" ColumnName="customer_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payment_type">
+            <EntityTypeMapping TypeName="megastoreModel.payment_type">
+              <MappingFragment StoreEntitySet="payment_type">
+                <ScalarProperty Name="payment_type_id" ColumnName="payment_type_id" />
+                <ScalarProperty Name="type_name" ColumnName="type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="megastoreModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_description" ColumnName="product_description" />
+                <ScalarProperty Name="product_type_idproduct_type" ColumnName="product_type_idproduct_type" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="price_per_unit" ColumnName="price_per_unit" />
+                <ScalarProperty Name="image_url" ColumnName="image_url" />
+                <ScalarProperty Name="categories_catogories_id" ColumnName="categories_catogories_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_type">
+            <EntityTypeMapping TypeName="megastoreModel.product_type">
+              <MappingFragment StoreEntitySet="product_type">
+                <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
+                <ScalarProperty Name="type_name" ColumnName="type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shipments">
+            <EntityTypeMapping TypeName="megastoreModel.shipment">
+              <MappingFragment StoreEntitySet="shipment">
+                <ScalarProperty Name="shipment_id" ColumnName="shipment_id" />
+                <ScalarProperty Name="time_created" ColumnName="time_created" />
+                <ScalarProperty Name="shipping_address" ColumnName="shipping_address" />
+                <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+                <ScalarProperty Name="delivery_cost" ColumnName="delivery_cost" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="final_price" ColumnName="final_price" />
+                <ScalarProperty Name="customer_customer_email" ColumnName="customer_customer_email" />
+                <ScalarProperty Name="payment_type_payment_type_id" ColumnName="payment_type_payment_type_id" />
+                <ScalarProperty Name="shipment_type_sipment_type_id" ColumnName="shipment_type_sipment_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shipment_details">
+            <EntityTypeMapping TypeName="megastoreModel.shipment_details">
+              <MappingFragment StoreEntitySet="shipment_details">
+                <ScalarProperty Name="shipment_details_id" ColumnName="shipment_details_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="product_product_id" ColumnName="product_product_id" />
+                <ScalarProperty Name="shipment_shipment_id" ColumnName="shipment_shipment_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shipment_type">
+            <EntityTypeMapping TypeName="megastoreModel.shipment_type">
+              <MappingFragment StoreEntitySet="shipment_type">
+                <ScalarProperty Name="sipment_type_id" ColumnName="sipment_type_id" />
+                <ScalarProperty Name="type_name" ColumnName="type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stocks">
+            <EntityTypeMapping TypeName="megastoreModel.stock">
+              <MappingFragment StoreEntitySet="stock">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="in_stock" ColumnName="in_stock" />
+                <ScalarProperty Name="last_update_time" ColumnName="last_update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
