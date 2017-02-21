@@ -29,7 +29,7 @@ namespace Megastore.pages
             PasswordTextbox.Text = "";
             FNTextbox.Text = "";
             LNTextbox.Text = "";
-            AddressLabel.Text = "";
+            AddressTextbox.Text = "";
         }
     }
 
