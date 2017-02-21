@@ -123,6 +123,7 @@
     <Content Include="pages\account\hej.txt" />
     <Content Include="pages\Index.aspx" />
     <Content Include="pages\Products.aspx" />
+    <Content Include="pages\Registration.aspx" />
     <Content Include="pages\Selectedproduct.aspx" />
     <Content Include="scripts\jquery-1.7.1.js" />
     <None Include="Web.Debug.config">
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="pages\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Selectedproduct.aspx.cs">
       <DependentUpon>Selectedproduct.aspx</DependentUpon>
