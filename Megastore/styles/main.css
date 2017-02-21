@@ -89,15 +89,15 @@
     clear: both;
 }
 .content{
-    width: 780px;
+    
     background-color: rgb(254,254,254);
-    border: 1px solid rgb(224,224,224);
+    border: 2px solid red;
     border-radius: 5px 5px 5px 5px;
-    margin-left: 8px;
+    width: 82%;
     margin-top: 8px;
     margin-bottom: 8px;
     min-height: 400px;
-    float: right;
+    float: left;
 }
 
 .rightbar{
