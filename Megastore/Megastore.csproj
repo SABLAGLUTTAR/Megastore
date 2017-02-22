@@ -111,6 +111,7 @@
     </Content>
     <Content Include="ads\intel.png" />
     <Content Include="ads\nvidia.jpeg" />
+    <Content Include="images\cancel.png" />
     <Content Include="images\megastore.png" />
     <Content Include="IndexTest.aspx" />
     <Content Include="LoginUser.ascx" />

@@ -5,5 +5,8 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
-    <h1>Content of advanced search</h1>
+    <h1>Advanced Search</h1>
+
+
+
 </asp:Content>

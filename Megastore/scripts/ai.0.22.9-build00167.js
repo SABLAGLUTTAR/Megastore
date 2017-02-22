@@ -3443,7 +3443,9 @@ var Microsoft;
                 }, this.config.diagnosticLogInterval);
             };
             Initialization.prototype.addHousekeepingBeforeUnload = function (appInsightsInstance) {
-                // Add callback to push events when the user navigates away
+                // Add callback to push events when the 
+                
+                avigates away
                 if (!appInsightsInstance.config.disableFlushOnBeforeUnload && ('onbeforeunload' in window)) {
                     var performHousekeeping = function () {
                         appInsightsInstance.context._sender.triggerSend();
