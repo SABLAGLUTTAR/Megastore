@@ -11,14 +11,13 @@ namespace Megastore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void button_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SearchResult.aspx?search=" + search.Text);
+            Response.Redirect("SearchResult.aspx?search=" + searchBox.Text);
         }
 
-        
     }
 }

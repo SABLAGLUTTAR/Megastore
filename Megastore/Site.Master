@@ -37,25 +37,37 @@
 
                 <div id="headerContainer">
 
-                    <div class="search">
-                        <asp:TextBox ID="search" runat="server" Width="200px"></asp:TextBox>
-                        <asp:Button ID="button" Text="Search" runat="server" OnClick="button_Click" />
-                        <br />
-
-                    </div>
-
-                    <a href="AdvancedSearch.aspx">Advanced</a>
-
-
-                    <asp:LoginView ID="LoginView1" runat="server">
-                        <LoggedInTemplate>
-                            Congratulations. You are now Logged in.
-                        </LoggedInTemplate>
-                        <AnonymousTemplate>
-                            Please click Login to continue.
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:TextBox ID="searchBox" runat="server" Width="200px" Height="20px" BorderWidth="2" BorderColor="Red"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:LinkButton ID="button"
+                                    Text="Search"
+                                    OnCommand="button_Click"
+                                    runat="server" />
+                            </td>
+                            <td><a href="AdvancedSearch.aspx">Advanced</a>
+                            </td>
+                            <td>
+                                <asp:LoginView ID="LoginView1" runat="server">
+                                    <LoggedInTemplate>
+                                        Congratulations. You are now Logged in.
+                                    </LoggedInTemplate>
+                                    <AnonymousTemplate>
+                                        Please click Login to continue.
                             <uc1:LoginUser runat="server" ID="LoginUser" />
-                        </AnonymousTemplate>
-                    </asp:LoginView>
+                                    </AnonymousTemplate>
+                                </asp:LoginView>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+
+
                 </div>
             </div>
 
