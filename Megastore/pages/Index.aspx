@@ -39,7 +39,7 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="productsData" runat="server" ConnectionString="<%$ ConnectionStrings:mydbConnectionString %>" ProviderName="<%$ ConnectionStrings:mydbConnectionString.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product.product_name AS Name, categories.category_name AS Category, product.product_description AS Description, product.price_per_unit AS Price, product.unit AS Unit, product.image_url AS Image FROM categories INNER JOIN product ON categories.categories_id = product.categories_catogories_id INNER JOIN product_type ON product.product_type_idproduct_type = product_type.product_type_id"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="productsData" runat="server" ConnectionString="<%$ ConnectionStrings:etvffqgz_megastoreEntities %>" ProviderName="<%$ ConnectionStrings:etvffqgz_megastoreEntities.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product.product_name AS Name, categories.category_name AS Category, product.product_description AS Description, product.price_per_unit AS Price, product.unit AS Unit, product.image_url AS Image FROM categories INNER JOIN product ON categories.categories_id = product.categories_catogories_id INNER JOIN product_type ON product.product_type_idproduct_type = product_type.product_type_id"></asp:SqlDataSource>
 
 
 </asp:Content>
