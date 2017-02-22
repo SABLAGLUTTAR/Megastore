@@ -22,11 +22,8 @@ namespace Megastore
 
         protected void OnAuthenticate(object sender, AuthenticateEventArgs e)
         {
-            e.Authenticated = System.Web.Security.Membership.ValidateUser(Login1.UserName, Login1.Password);
-            if (!e.Authenticated)
-            {
-                popup.Show();
-            }
+            
+
         }
 
         protected void Register_Click(object sender, EventArgs e)
