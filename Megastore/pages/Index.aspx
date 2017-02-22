@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
 
 
-    <asp:GridView ID="ProductGrid" OnRowCommand="CartList_RowCommand" runat="server" BackColor="White" Width="100%" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="productsData" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="false">
+    <asp:GridView ID="GridView1" runat="server" BackColor="White" Width="100%" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="productsData" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="false">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -30,10 +30,10 @@
                 Target="" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Type" HeaderText="Type" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Category" HeaderText="Category" />
-            <asp:ImageField ItemStyle-Width="150px" DataImageUrlField="Image"></asp:ImageField>
+            <asp:ImageField DataImageUrlField="Image" ControlStyle-Width="150px" ControlStyle-Height="150px"></asp:ImageField>
             <asp:TemplateField ShowHeader="false">
                 <ItemTemplate>
-                    <asp:Button Text="Add to cart" runat="server" CommandArgument="product_id" CommandName="Add" />
+                    <asp:Button Text="Add to cart" runat="server"  />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
