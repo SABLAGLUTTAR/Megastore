@@ -192,7 +192,8 @@
     <Compile Include="LoginUser.ascx.designer.cs">
       <DependentUpon>LoginUser.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="App_Code\Models\CustomerModel.cs" />
+    <Compile Include="App_Code\Models\ProductModel.cs" />
     <Compile Include="pages\AdvancedSearch.aspx.cs">
       <DependentUpon>AdvancedSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
