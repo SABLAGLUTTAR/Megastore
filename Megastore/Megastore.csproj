@@ -127,6 +127,7 @@
     <Content Include="pages\Registration.aspx" />
     <Content Include="pages\SearchResult.aspx" />
     <Content Include="pages\Selectedproduct.aspx" />
+    <Content Include="pages\SubCategory.aspx" />
     <Content Include="scripts\jquery-1.7.1.js" />
     <Content Include="Site.Master" />
     <EntityDeploy Include="Storemodel.edmx">
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="pages\Selectedproduct.aspx.designer.cs">
       <DependentUpon>Selectedproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SubCategory.aspx.cs">
+      <DependentUpon>SubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\SubCategory.aspx.designer.cs">
+      <DependentUpon>SubCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="payment_type.cs">
       <DependentUpon>Storemodel.tt</DependentUpon>

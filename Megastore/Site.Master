@@ -71,47 +71,47 @@
                     <li class="dropdown">
                         <a class="one" href="Products.aspx?category=Book" class="dropbtn">Books</a>
                         <div class="dropdown-content">
-                            <a class="one" href="Products.aspx?category=Book&subcat=Children">Children</a>
-                            <a class="one" href="Products.aspx?category=Book&subcat=Manga">Manga</a>
-                            <a class="one" href="Products.aspx?category=Book&subcat=Thriller">Thriller</a>
+                            <a class="one" href="SubCategory.aspx?category=Book&subcat=Children">Children</a>
+                            <a class="one" href="SubCategory.aspx?category=Book&subcat=Manga">Manga</a>
+                            <a class="one" href="SubCategory.aspx?category=Book&subcat=Thriller">Thriller</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a class="one" href="Products.aspx?category=Movie" class="dropbtn">Movies</a>
                         <div class="dropdown-content">
-                            <a class="one" href="Products.aspx?category=Movie&subcat=Children">Children</a>
-                            <a class="one" href="Products.aspx?category=Movie&subcat=Action">Action</a>
-                            <a class="one" href="Products.aspx?category=Movie&subcat=Thriller">Thriller</a>
+                            <a class="one" href="SubCategory.aspx?category=Movie&subcat=Children">Children</a>
+                            <a class="one" href="SubCategory.aspx?category=Movie&subcat=Action">Action</a>
+                            <a class="one" href="SubCategory.aspx?category=Movie&subcat=Thriller">Thriller</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a class="one" href="Products.aspx?category=Smartphone" class="dropbtn">Smartphones</a>
                         <div class="dropdown-content">
-                            <a class="one" href="Products.aspx?category=Smartphone&subcat=Iphone">Iphone</>
-                            <a class="one" href="Products.aspx?category=Smartphone&subcat=Android">Android</a>
-                                <a class="one" href="Products.aspx?category=Smartphone&subcat=Blackberry">Blackberry</a>
+                            <a class="one" href="SubCategory.aspx?category=Smartphone&subcat=Iphone">Iphone</>
+                            <a class="one" href="SubCategory.aspx?category=Smartphone&subcat=Android">Android</a>
+                                <a class="one" href="SubCategory.aspx?category=Smartphone&subcat=Blackberry">Blackberry</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a class="one" href="Products.aspx?category=Computer" class="dropbtn">Computers</a>
                         <div class="dropdown-content">
-                            <a class="one" href="Products.aspx?category=Computer&subcat=Processor">Processors</a>
-                            <a class="one" href="Products.aspx?category=Computer&subcat=Graphics">Graphics card</a>
-                            <a class="one" href="Products.aspx?category=Computer&subcat=Motherboard">Motherboard</a>
-                            <a class="one" href="Products.aspx?category=Computer&subcat=Ram">RAM</a>
-                            <a class="one" href="Products.aspx?category=Computer&subcat=Harddrive">HDD,SSD</a>
+                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Processor">Processors</a>
+                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Graphics">Graphics card</a>
+                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Motherboard">Motherboard</a>
+                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Ram">RAM</a>
+                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Harddrive">HDD,SSD</a>
                         </div>
 
                     </li>
                     <li class="dropdown">
                         <a class="one" href="Products.aspx?category=Game" class="dropbtn">Games</a>
                         <div class="dropdown-content">
-                            <a class="one" href="Products.aspx?category=Game&subcat=RPG">RPG</a>
-                            <a class="one" href="Products.aspx?category=Game&subcat=Fps">FPS</a>
-                            <a class="one" href="Products.aspx?category=Game&subcat=Strategy">Strategy</a>
+                            <a class="one" href="SubCategory.aspx?category=Game&subcat=RPG">RPG</a>
+                            <a class="one" href="SubCategory.aspx?category=Game&subcat=Fps">FPS</a>
+                            <a class="one" href="SubCategory.aspx?category=Game&subcat=Strategy">Strategy</a>
                         </div>
 
                     </li>
