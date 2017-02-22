@@ -113,6 +113,7 @@
     <Content Include="ads\nvidia.jpeg" />
     <Content Include="images\cancel.png" />
     <Content Include="images\megastore.png" />
+    <Content Include="images\Products\zelda.jpg" />
     <Content Include="IndexTest.aspx" />
     <Content Include="LoginUser.ascx" />
     <Content Include="packages.config" />
