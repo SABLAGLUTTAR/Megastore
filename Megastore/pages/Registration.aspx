@@ -7,7 +7,7 @@
     <br />
     <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     <br />
-    <table >
+    <table>
         <tr>
             <td>
                 <asp:Label ID="EmailLabel" runat="server" Text="E-mail: "></asp:Label>
