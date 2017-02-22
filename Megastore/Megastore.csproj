@@ -122,6 +122,7 @@
     <Content Include="pages\account\hej.txt" />
     <Content Include="pages\AdvancedSearch.aspx" />
     <Content Include="pages\Index.aspx" />
+    <Content Include="images\Products\eu4.png" />
     <Content Include="pages\Products.aspx" />
     <Content Include="pages\Registration.aspx" />
     <Content Include="pages\SearchResult.aspx" />
@@ -285,6 +286,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pages\ProductIMG\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
