@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a5ca3ce405d4e7b9712e97abfda4a2c" Name="Diagram1">
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.admin" Width="1.5" PointX="5.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.category" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.customer" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.payment_type" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.product" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.product_type" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.shipment" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.shipment_details" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.shipment_type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="etvffqgz_megastoreModel.stock" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_product_categories1" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_shipment_customer1" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_shipment_payment_type1" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_product_product_type" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_shipment_details_product1" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_stock_product1" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_shipment_details_shipment1" ManuallyRouted="false" />
+        <AssociationConnector Association="etvffqgz_megastoreModel.fk_shipment_shipment_type1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

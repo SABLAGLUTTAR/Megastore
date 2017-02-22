@@ -14,6 +14,7 @@ namespace Megastore
             Login1.UserNameLabelText = "E-mail: ";
             Login1.RememberMeText = "Remember me";
             Login1.TitleText = "";
+            Login1.LoginButtonType = ButtonType.Link;
             Login1.BorderPadding.Equals(150);
             Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
             Login1.PasswordRecoveryText = "Password recovery";
@@ -22,11 +23,8 @@ namespace Megastore
 
         protected void OnAuthenticate(object sender, AuthenticateEventArgs e)
         {
-            e.Authenticated = System.Web.Security.Membership.ValidateUser(Login1.UserName, Login1.Password);
-            if (!e.Authenticated)
-            {
-                popup.Show();
-            }
+            
+
         }
 
         protected void Register_Click(object sender, EventArgs e)

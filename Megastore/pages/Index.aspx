@@ -22,7 +22,7 @@
 
             <asp:BoundField ItemStyle-Width="150px" DataField="Name" HeaderText="Product name" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Description" HeaderText="Description" />
-            <asp:BoundField ItemStyle-Width="150px" DataField="Unit" HeaderText="In storage" />
+            <asp:BoundField ItemStyle-Width="150px" DataField="Unit" HeaderText="Unit" />
             <asp:HyperLinkField DataTextField="Price"
                 ItemStyle-Width="150px"
                 DataTextFormatString="{0:c}"
@@ -30,7 +30,7 @@
                 Target="" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Type" HeaderText="Type" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Category" HeaderText="Category" />
-            <asp:ImageField DataImageUrlField="Image" ControlStyle-Width="150px" ControlStyle-Height="150px"></asp:ImageField>
+            <asp:ImageField DataImageUrlField="Image" ControlStyle-Width="150px" ></asp:ImageField>
             <asp:TemplateField ShowHeader="false">
                 <ItemTemplate>
                     <asp:Button Text="Add to cart" runat="server"  />

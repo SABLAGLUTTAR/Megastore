@@ -3,8 +3,12 @@
 
 <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
 </asp:ScriptManagerProxy>
-<asp:Button ID="Login" runat="server" Text="Login"></asp:Button>
-<asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click"></asp:Button>
+
+<asp:LinkButton ID="Login" runat="server" Text="Login"></asp:LinkButton>
+<asp:LinkButton ID="Register"
+    Text="Register"
+    OnCommand="Register_Click"
+    runat="server" />
 <asp:Panel ID="pnlLogin" runat="server" CssClass="modalPopup" Style="display: none">
     <table border="0">
         <tr>

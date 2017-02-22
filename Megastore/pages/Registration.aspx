@@ -5,6 +5,7 @@
     <h2>Register</h2>
 
     <br />
+    <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
     <br />
     <table>
         <tr>
