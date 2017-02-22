@@ -16,8 +16,11 @@ namespace Megastore.pages
 
         protected void CartList_RowCommand(Object sender, GridViewCommandEventArgs e)
         {
-
-  
+            if (e.CommandName == "Add")
+            {
+                //Koden här
+                Server.Transfer("Index.aspx");
+            }
         }
 
 
