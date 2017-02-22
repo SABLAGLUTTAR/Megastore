@@ -14,6 +14,8 @@ namespace Megastore.pages
             searchlabel.InnerText = "You searched for: "+ Request.QueryString["search"];
             string search =  Request.QueryString["search"];
             srch.Text = search.Trim();
+            srch.Visible = false;
+            searchlabel.Visible = false;
         }
 
  

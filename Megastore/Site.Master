@@ -125,7 +125,7 @@
                 </ul>
             </div>
 
-
+            <div class="right">
             <div class="rightbar">
                 <asp:ContentPlaceHolder ID="rightbar" runat="server">
                     <asp:Timer ID="Timer1" Interval="10000" runat="server" />
@@ -134,7 +134,7 @@
                         <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
                         </Triggers>
-                        <ContentTemplate>
+                        <ContentTemplate >
                             <asp:AdRotator
                                 ID="AdRotator1"
                                 AdvertisementFile="ads/comAd.xml"
@@ -156,23 +156,24 @@
 
                 </asp:ContentPlaceHolder>
             </div>
+        </div>
 
-            <div class="content">
-                <asp:ContentPlaceHolder ID="contentBody" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-
-
-
+        <div class="content">
+            <asp:ContentPlaceHolder ID="contentBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 
 
 
-            <div class="clear"></div>
 
-            <div class="clear"></div>
-            <div class="footer">
-                <h2>Copyright by Sabla Gluttar</h2>
-            </div>
+
+
+        <div class="clear"></div>
+
+        <div class="clear"></div>
+        <div class="footer">
+            <h2>Copyright by Sabla Gluttar</h2>
+        </div>
 
         </div>
 
