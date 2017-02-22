@@ -13,7 +13,7 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
-    
+
     <link href="Styles/main.css" rel="stylesheet" />
     <link href="Styles/menu.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -21,7 +21,7 @@
 </head>
 <body>
 
-   
+
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
@@ -31,37 +31,36 @@
                     <asp:Image ID="img" runat="server" ImageUrl="~/images/logo.png" Width="300px" Height="95px" />
                 </div>
                 <div id="triangle">
-                      
                 </div>
-                
 
-                
+
+
                 <div id="headerContainer">
-                    
+
                     <div class="search">
-                    <asp:TextBox ID="search" runat="server" Width="200px"></asp:TextBox>
-                    <asp:Button ID="button" Text="Search" runat="server" OnClick="button_Click" /> 
+                        <asp:TextBox ID="search" runat="server" Width="200px"></asp:TextBox>
+                        <asp:Button ID="button" Text="Search" runat="server" OnClick="button_Click" />
                         <br />
-                      
+
                     </div>
-                    
-                    <a href ="AdvancedSearch.aspx" >Advanced</a>  
-                        
-                    
+
+                    <a href="AdvancedSearch.aspx">Advanced</a>
+
+
                     <asp:LoginView ID="LoginView1" runat="server">
                         <LoggedInTemplate>
                             Congratulations. You are now Logged in.
                         </LoggedInTemplate>
                         <AnonymousTemplate>
                             Please click Login to continue.
-                            <uc1:loginuser runat="server" id="LoginUser" />
+                            <uc1:LoginUser runat="server" ID="LoginUser" />
                         </AnonymousTemplate>
                     </asp:LoginView>
                 </div>
             </div>
 
 
-            
+
 
 
 
@@ -92,7 +91,7 @@
                         <div class="dropdown-content">
                             <a class="one" href="Products.aspx?category=Smartphone&subcat=Iphone">Iphone</>
                             <a class="one" href="Products.aspx?category=Smartphone&subcat=Android">Android</a>
-                            <a class="one" href="Products.aspx?category=Smartphone&subcat=Blackberry">Blackberry</a>
+                                <a class="one" href="Products.aspx?category=Smartphone&subcat=Blackberry">Blackberry</a>
                         </div>
 
                     </li>
@@ -118,10 +117,10 @@
                     </li>
                 </ul>
             </div>
-            
+
+
             <div class="rightbar">
                 <asp:ContentPlaceHolder ID="rightbar" runat="server">
-
                     <asp:Timer ID="Timer1" Interval="10000" runat="server" />
 
                     <asp:UpdatePanel ID="up1" runat="server">
@@ -132,35 +131,31 @@
                             <asp:AdRotator
                                 ID="AdRotator1"
                                 AdvertisementFile="ads/comAd.xml"
-                                
                                 runat="server"
-                                Height="128px" Width="200px"  />
+                                Height="128px" Width="200px" />
                             <asp:AdRotator
                                 ID="AdRotator2"
                                 AdvertisementFile="ads/comAd.xml"
-                                
                                 runat="server"
-                                Height="128px" Width="200px"  />
+                                Height="128px" Width="200px" />
                             <asp:AdRotator
                                 ID="AdRotator3"
                                 AdvertisementFile="ads/comAd.xml"
-                                
                                 runat="server"
-                                Height="128px" Width="200px"  />
+                                Height="128px" Width="200px" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
-             
+
+
                 </asp:ContentPlaceHolder>
             </div>
-
-
 
             <div class="content">
                 <asp:ContentPlaceHolder ID="contentBody" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
 
-            
+
 
 
 
@@ -176,6 +171,6 @@
 
     </form>
 
-    
+
 </body>
 </html>

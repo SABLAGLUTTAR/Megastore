@@ -158,6 +158,7 @@
     </Content>
     <Content Include="styles\main.css" />
     <Content Include="styles\menu.css" />
+    <Content Include="styles\rightbar.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

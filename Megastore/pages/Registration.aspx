@@ -3,7 +3,10 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
     <h2>Register</h2>
-    <table>
+
+    <br />
+    <br />
+    <table align="center">
         <tr>
             <td>
                 <asp:Label ID="EmailLabel" runat="server" Text="E-mail: "></asp:Label>
