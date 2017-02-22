@@ -58,13 +58,13 @@ namespace Megastore {
         protected global::System.Web.UI.WebControls.Image img;
         
         /// <summary>
-        /// search control.
+        /// searchBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search;
+        protected global::System.Web.UI.WebControls.TextBox searchBox;
         
         /// <summary>
         /// button control.
@@ -73,7 +73,7 @@ namespace Megastore {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button;
+        protected global::System.Web.UI.WebControls.LinkButton button;
         
         /// <summary>
         /// LoginView1 control.

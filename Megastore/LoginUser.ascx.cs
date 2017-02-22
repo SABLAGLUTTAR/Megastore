@@ -14,6 +14,7 @@ namespace Megastore
             Login1.UserNameLabelText = "E-mail: ";
             Login1.RememberMeText = "Remember me";
             Login1.TitleText = "";
+            Login1.LoginButtonType = ButtonType.Link;
             Login1.BorderPadding.Equals(150);
             Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
             Login1.PasswordRecoveryText = "Password recovery";
