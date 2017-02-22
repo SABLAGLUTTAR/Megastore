@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
 
 
-    <asp:GridView ID="GridView1" GridLines="None" runat="server" BackColor="White" Width="100%" CellPadding="3" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
+    <asp:GridView ID="GridView1" AllowSorting="true" GridLines="None" runat="server" BackColor="White" Width="100%" CellPadding="3" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
