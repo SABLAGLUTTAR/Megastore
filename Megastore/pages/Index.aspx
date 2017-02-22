@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
 
 
-    <asp:GridView ID="GridView1" runat="server" BackColor="White" Width="100%" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="productsData" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="false">
+    <asp:GridView ID="GridView1" GridLines="None" runat="server" BackColor="White" Width="100%" CellPadding="3" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -16,24 +16,25 @@
         <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
         <SortedAscendingCellStyle BackColor="#F1F1F1" />
         <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingCellStyle BackColor="#ededed" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
         <Columns>
 
-            <asp:BoundField ItemStyle-Width="150px" DataField="Name" HeaderText="Product name" />
-            <asp:BoundField ItemStyle-Width="150px" DataField="Description" HeaderText="Description" />
-            <asp:BoundField ItemStyle-Width="150px" DataField="Unit" HeaderText="Unit" />
+            <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Name" HeaderText="Product name" />
+            <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Description" HeaderText="Description" />
+            <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Unit" HeaderText="Unit" />
             <asp:HyperLinkField DataTextField="Price"
+                ItemStyle-HorizontalAlign="Center"
                 ItemStyle-Width="150px"
                 DataTextFormatString="{0:c}"
                 HeaderText="Price"
                 Target="" />
-            <asp:BoundField ItemStyle-Width="150px" DataField="Type" HeaderText="Type" />
-            <asp:BoundField ItemStyle-Width="150px" DataField="Category" HeaderText="Category" />
-            <asp:ImageField DataImageUrlField="Image" ControlStyle-Width="150px" ></asp:ImageField>
-            <asp:TemplateField ShowHeader="false">
+            <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Type" HeaderText="Type" />
+            <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Category" HeaderText="Category" />
+            <asp:ImageField DataImageUrlField="Image" ControlStyle-Width="150px"></asp:ImageField>
+            <asp:TemplateField ItemStyle-Width="200px" ShowHeader="false" ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
-                    <asp:Button Text="Add to cart" runat="server"  />
+                    <asp:LinkButton Text="Add to Cart" runat="server" CommandArgument='<%#Eval("Name")%>' CommandName="Add" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
