@@ -11,7 +11,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 db.products.Add(product);
                 db.SaveChanges();
                 return product.product_name + " was successfully added";
@@ -27,7 +27,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 product p = db.products.Find(id);
                 p.product_description = product.product_description;
                 p.product_name = product.product_name;
@@ -50,7 +50,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 product p = db.products.Find(id);
                 db.products.Attach(p);
                 db.products.Remove(p);

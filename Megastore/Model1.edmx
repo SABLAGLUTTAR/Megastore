@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="megastoreModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="etvffqgz_megastoreModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin">
           <Key>
             <PropertyRef Name="email" />
@@ -193,17 +193,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="megastoreModelStoreContainer">
-          <EntitySet Name="admin" EntityType="Self.admin" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="categories" EntityType="Self.categories" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="customer" EntityType="Self.customer" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="payment_type" EntityType="Self.payment_type" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="product" EntityType="Self.product" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="product_type" EntityType="Self.product_type" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="shipment" EntityType="Self.shipment" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="shipment_details" EntityType="Self.shipment_details" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="shipment_type" EntityType="Self.shipment_type" Schema="mydb" store:Type="Tables" />
-          <EntitySet Name="stock" EntityType="Self.stock" Schema="mydb" store:Type="Tables" />
+        <EntityContainer Name="etvffqgz_megastoreModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="categories" EntityType="Self.categories" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="payment_type" EntityType="Self.payment_type" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="product_type" EntityType="Self.product_type" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="shipment" EntityType="Self.shipment" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="shipment_details" EntityType="Self.shipment_details" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="shipment_type" EntityType="Self.shipment_type" Schema="etvffqgz_megastore" store:Type="Tables" />
+          <EntitySet Name="stock" EntityType="Self.stock" Schema="etvffqgz_megastore" store:Type="Tables" />
           <AssociationSet Name="fk_product_categories1" Association="Self.fk_product_categories1">
             <End Role="categories" EntitySet="categories" />
             <End Role="product" EntitySet="product" />
@@ -241,7 +241,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="megastoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="etvffqgz_megastoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="admin">
           <Key>
             <PropertyRef Name="email" />
@@ -446,7 +446,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="mydbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="etvffqgz_megastoreEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admins" EntityType="Self.admin" />
           <EntitySet Name="categories" EntityType="Self.category" />
           <EntitySet Name="customers" EntityType="Self.customer" />
@@ -495,9 +495,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="megastoreModelStoreContainer" CdmEntityContainer="mydbEntities">
+        <EntityContainerMapping StorageEntityContainer="etvffqgz_megastoreModelStoreContainer" CdmEntityContainer="etvffqgz_megastoreEntities">
           <EntitySetMapping Name="admins">
-            <EntityTypeMapping TypeName="megastoreModel.admin">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.admin">
               <MappingFragment StoreEntitySet="admin">
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="first_name" ColumnName="first_name" />
@@ -507,7 +507,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="categories">
-            <EntityTypeMapping TypeName="megastoreModel.category">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.category">
               <MappingFragment StoreEntitySet="categories">
                 <ScalarProperty Name="categories_id" ColumnName="categories_id" />
                 <ScalarProperty Name="category_name" ColumnName="category_name" />
@@ -515,7 +515,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="customers">
-            <EntityTypeMapping TypeName="megastoreModel.customer">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.customer">
               <MappingFragment StoreEntitySet="customer">
                 <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="last_name" ColumnName="last_name" />
@@ -526,7 +526,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="payment_type">
-            <EntityTypeMapping TypeName="megastoreModel.payment_type">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.payment_type">
               <MappingFragment StoreEntitySet="payment_type">
                 <ScalarProperty Name="payment_type_id" ColumnName="payment_type_id" />
                 <ScalarProperty Name="type_name" ColumnName="type_name" />
@@ -534,7 +534,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="megastoreModel.product">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.product">
               <MappingFragment StoreEntitySet="product">
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
@@ -548,7 +548,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="product_type">
-            <EntityTypeMapping TypeName="megastoreModel.product_type">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.product_type">
               <MappingFragment StoreEntitySet="product_type">
                 <ScalarProperty Name="product_type_id" ColumnName="product_type_id" />
                 <ScalarProperty Name="type_name" ColumnName="type_name" />
@@ -556,7 +556,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="shipments">
-            <EntityTypeMapping TypeName="megastoreModel.shipment">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.shipment">
               <MappingFragment StoreEntitySet="shipment">
                 <ScalarProperty Name="shipment_id" ColumnName="shipment_id" />
                 <ScalarProperty Name="time_created" ColumnName="time_created" />
@@ -572,7 +572,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="shipment_details">
-            <EntityTypeMapping TypeName="megastoreModel.shipment_details">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.shipment_details">
               <MappingFragment StoreEntitySet="shipment_details">
                 <ScalarProperty Name="shipment_details_id" ColumnName="shipment_details_id" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
@@ -582,7 +582,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="shipment_type">
-            <EntityTypeMapping TypeName="megastoreModel.shipment_type">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.shipment_type">
               <MappingFragment StoreEntitySet="shipment_type">
                 <ScalarProperty Name="sipment_type_id" ColumnName="sipment_type_id" />
                 <ScalarProperty Name="type_name" ColumnName="type_name" />
@@ -590,7 +590,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="stocks">
-            <EntityTypeMapping TypeName="megastoreModel.stock">
+            <EntityTypeMapping TypeName="etvffqgz_megastoreModel.stock">
               <MappingFragment StoreEntitySet="stock">
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="in_stock" ColumnName="in_stock" />

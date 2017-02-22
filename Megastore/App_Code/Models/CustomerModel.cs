@@ -12,7 +12,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 db.customers.Add(customer);
                 db.SaveChanges();
                 return customer.customer_email + " was successfully added";
@@ -28,7 +28,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 customer c = db.customers.Find(id);
                 c.customer_address = customer.customer_address;
                 c.first_name = customer.first_name;
@@ -50,7 +50,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 db.customers.Add(customer);
                 db.SaveChanges();
                 return customer.customer_email + " was successfully added";
@@ -66,7 +66,7 @@ namespace Megastore.pages
         {
             try
             {
-                mydbEntities db = new mydbEntities();
+                etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 customer p = db.customers.Find(id);
                 db.customers.Attach(p);
                 db.customers.Remove(p);
