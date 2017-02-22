@@ -30,7 +30,7 @@
                 Target="" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Type" HeaderText="Type" />
             <asp:BoundField ItemStyle-Width="150px" DataField="Category" HeaderText="Category" />
-            <asp:ImageField DataImageUrlField="Image"></asp:ImageField>
+            <asp:ImageField DataImageUrlField="Image" ControlStyle-Width="150px" ControlStyle-Height="150px"></asp:ImageField>
             <asp:TemplateField ShowHeader="false">
                 <ItemTemplate>
                     <asp:Button Text="Add to cart" runat="server"  />
