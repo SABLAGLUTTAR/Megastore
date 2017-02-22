@@ -6,7 +6,7 @@
 
     <br />
     <br />
-    <table align="center">
+    <table >
         <tr>
             <td>
                 <asp:Label ID="EmailLabel" runat="server" Text="E-mail: "></asp:Label>
