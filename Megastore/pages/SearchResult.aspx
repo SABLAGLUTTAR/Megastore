@@ -11,7 +11,9 @@
         <label id="searchlabel" runat="server"></label>
     </h1>
 
-    <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="3" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
+    <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
+    <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
+        <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
         <AlternatingRowStyle BackColor="#FFFFFF" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -22,11 +24,12 @@
         <SortedDescendingCellStyle BackColor="#ededed" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
         <Columns>
+
             <asp:ImageField DataImageUrlField="Image" ItemStyle-HorizontalAlign="Left" ControlStyle-Width="160px"></asp:ImageField>
             <asp:BoundField ItemStyle-Width="180px" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Left" DataField="Name" HeaderText="Product name" />
             <asp:BoundField ItemStyle-Width="250px" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Left" DataField="Description" HeaderText="Description" />
-            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Type" />
-            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Category" />
+            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Type" HeaderText="Type"/>
+            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Category" HeaderText="Category"/>
             <asp:HyperLinkField DataTextField="Price"
                 ItemStyle-HorizontalAlign="Center"
                 ItemStyle-Width="150px"
@@ -40,6 +43,8 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+        </ContentTemplate>
+        </asp:UpdatePanel>
     <asp:SqlDataSource ID="productsData" runat="server"
         ConnectionString="<%$ ConnectionStrings:dataConn %>"
         ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>"

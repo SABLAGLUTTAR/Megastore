@@ -9,7 +9,8 @@
     
     <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
     <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
-        <AlternatingRowStyle BackColor="#FFFFFF" />
+       <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
+         <AlternatingRowStyle BackColor="#FFFFFF" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />

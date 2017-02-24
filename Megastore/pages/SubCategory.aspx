@@ -6,9 +6,10 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
   
-        <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="sqlTest" ForeColor="Black" AutoGenerateColumns="false">
-        <EmptyDataTemplate>Sorry the product was not found!</EmptyDataTemplate>
-             <AlternatingRowStyle BackColor="#FFFFFF" />
+       <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
+    <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="sqlTest" ForeColor="Black" AutoGenerateColumns="false">
+        <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
+        <AlternatingRowStyle BackColor="#FFFFFF" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
@@ -35,9 +36,10 @@
                     <asp:LinkButton Text="Add to Cart" runat="server" CommandArgument='<%#Eval("Name")%>' CommandName="Add" />
                 </ItemTemplate>
             </asp:TemplateField>
-
         </Columns>
     </asp:GridView>
+        </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:SqlDataSource ID="sqlTest" runat="server" ConnectionString="<%$ ConnectionStrings:dataConn %>" ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product.product_name AS Name, product.product_description AS Description, product.unit AS Unit, product.price_per_unit AS Price, product.image_url AS Image, categories.category_name AS Category FROM product_type INNER JOIN product ON product_type.product_type_id = product.product_type_idproduct_type INNER JOIN categories ON product.categories_catogories_id = categories.categories_id WHERE (product_type.type_name = @category AND categories.category_name = @subcat) ">
              <SelectParameters>
     <asp:QueryStringParameter Name="category" QueryStringField="category" />

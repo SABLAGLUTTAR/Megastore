@@ -22,9 +22,10 @@
     <div>
         <asp:Label runat="server" ID="searchlabel" Text=""></asp:Label>
         
-         <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="SqlDataSource1" ForeColor="Black" AutoGenerateColumns="false">
-        <EmptyDataTemplate>Sorry the product was not found!</EmptyDataTemplate>
-             <AlternatingRowStyle BackColor="#FFFFFF" />
+         <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
+    <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="sqlDataSource1" ForeColor="Black" AutoGenerateColumns="false">
+        <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
+        <AlternatingRowStyle BackColor="#FFFFFF" />
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
@@ -38,8 +39,8 @@
             <asp:ImageField DataImageUrlField="Image" ItemStyle-HorizontalAlign="Left" ControlStyle-Width="160px"></asp:ImageField>
             <asp:BoundField ItemStyle-Width="180px" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Left" DataField="Name" HeaderText="Product name" />
             <asp:BoundField ItemStyle-Width="250px" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Left" DataField="Description" HeaderText="Description" />
-            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Type" />
-            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Category" />
+            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Type" HeaderText="Type"/>
+            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Category" HeaderText="Category"/>
             <asp:HyperLinkField DataTextField="Price"
                 ItemStyle-HorizontalAlign="Center"
                 ItemStyle-Width="150px"
@@ -51,9 +52,10 @@
                     <asp:LinkButton Text="Add to Cart" runat="server" CommandArgument='<%#Eval("Name")%>' CommandName="Add" />
                 </ItemTemplate>
             </asp:TemplateField>
-
         </Columns>
     </asp:GridView>
+        </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dataConn %>" ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product.product_name AS Name, categories.category_name AS Category, product.product_description AS Description, product.price_per_unit AS Price, product.unit AS Unit, product.image_url AS Image FROM categories INNER JOIN product ON categories.categories_id = product.categories_catogories_id INNER JOIN product_type ON product.product_type_idproduct_type = product_type.product_type_id WHERE (product_type.type_name =@category AND product.product_name LIKE  @name)">
              <SelectParameters>
     <asp:QueryStringParameter Name="category" QueryStringField="category" />
