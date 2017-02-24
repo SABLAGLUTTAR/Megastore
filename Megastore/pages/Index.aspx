@@ -6,8 +6,8 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
-
-
+    
+    <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
     <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
         <AlternatingRowStyle BackColor="#FFFFFF" />
         <FooterStyle BackColor="#CCCCCC" />
@@ -38,6 +38,8 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+        </ContentTemplate>
+        </asp:UpdatePanel>
     <asp:SqlDataSource ID="productsData" runat="server" ConnectionString="<%$ ConnectionStrings:dataConn %>" ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product.product_name AS Name, categories.category_name AS Category, product.product_description AS Description, product.price_per_unit AS Price, product.unit AS Unit, product.image_url AS Image FROM categories INNER JOIN product ON categories.categories_id = product.categories_catogories_id INNER JOIN product_type ON product.product_type_idproduct_type = product_type.product_type_id"></asp:SqlDataSource>
 
 
