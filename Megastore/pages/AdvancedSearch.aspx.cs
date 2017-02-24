@@ -18,14 +18,14 @@ namespace Megastore.pages
         {
             
 
-            if (book.Checked)
+            if (ddlSubject.SelectedItem.ToString().Trim() == "Book")
             {
                 
                 Response.Redirect("AdvancedSearch.aspx?category=Book&name=%" +searchfield.Text+"%");
                 
             }
 
-            if (computer.Checked)
+            if (ddlSubject.SelectedItem.ToString().Trim() == "Computer")
             {
                 
                 Response.Redirect("AdvancedSearch.aspx?category=Computer&name=%" + searchfield.Text + "%");
@@ -33,21 +33,21 @@ namespace Megastore.pages
 
             }
 
-            if (movie.Checked)
+            if (ddlSubject.SelectedItem.ToString().Trim() == "Movie")
             {
                 
                 Response.Redirect("AdvancedSearch.aspx?category=Movie&name=%" + searchfield.Text + "%");
                 
             }
 
-            if (smartphone.Checked)
+            if (ddlSubject.SelectedItem.ToString().Trim() == "Smartphone")
             {
                 
                 Response.Redirect("AdvancedSearch.aspx?category=Smartphone&name=%" + searchfield.Text + "%");
                 
             }
 
-            if (game.Checked)
+            if (ddlSubject.SelectedItem.ToString().Trim() == "Game")
             {
                 
                 Response.Redirect("AdvancedSearch.aspx?category=Game&name=%" + searchfield.Text + "%");
