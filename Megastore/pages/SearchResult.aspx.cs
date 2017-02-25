@@ -11,14 +11,18 @@ namespace Megastore.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            searchlabel.InnerText = "You searched for: "+ Request.QueryString["search"];
-            string search =  Request.QueryString["search"];
-            srch.Text = search.Trim();
-            srch.Visible = false;
-            searchlabel.Visible = false;
+            searchlabel.InnerText = "You searched for: " + Request.QueryString["search"];
+            string search = Request.QueryString["search"];
+            if (search != null)
+            {
+                srch.Text = search.Trim();
+                srch.Visible = false;
+                searchlabel.Visible = false;
+            }
+
         }
 
- 
+
     }
 
 

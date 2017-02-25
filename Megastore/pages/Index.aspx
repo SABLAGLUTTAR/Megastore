@@ -8,8 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
     
     <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
-            
-    <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
+    <asp:GridView ID="GridView1" ShowHeader="False" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
        <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
          <AlternatingRowStyle BackColor="#FFFFFF" />
         <FooterStyle BackColor="#CCCCCC" />
@@ -25,26 +24,17 @@
             <asp:ImageField DataImageUrlField="Image" ItemStyle-HorizontalAlign="Left" ControlStyle-Width="160px"></asp:ImageField>
             <asp:BoundField ItemStyle-Width="180px" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Left" DataField="Name" HeaderText="Product name" />
             <asp:BoundField ItemStyle-Width="250px" ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Left" DataField="Description" HeaderText="Description" />
-            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Type" HeaderText="Type"/>
-            <asp:BoundField ItemStyle-Width="50px" ItemStyle-HorizontalAlign="Center" DataField="Category" HeaderText="Category"/>
             <asp:HyperLinkField DataTextField="Price"
                 ItemStyle-HorizontalAlign="Center"
                 ItemStyle-Width="150px"
                 DataTextFormatString="{0:c}"
                 HeaderText="Price"
                 Target="" />
-            <asp:HyperLinkField DataTextField="Id"
+            <asp:HyperLinkField Text="Add to Cart" 
                 ItemStyle-Width="200px"
-                DataTextFormatString="{0:c}"
                 DataNavigateUrlFields="Id"
                 DataNavigateUrlFormatString="~\Pages\ProductDetails.aspx?Id={0}"
-                HeaderText="Title"
                 Target="" />
-            <asp:TemplateField ItemStyle-Width="200px" ShowHeader="false" ItemStyle-HorizontalAlign="Center">
-                <ItemTemplate>
-                    <asp:LinkButton Text="Add to Cart" runat="server" CommandArgument='<%#Eval("Name")%>' CommandName="Add" />
-                </ItemTemplate>
-            </asp:TemplateField>
         </Columns>
     </asp:GridView>
         </ContentTemplate>

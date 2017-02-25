@@ -124,8 +124,10 @@
     <Content Include="images\bg.png" />
     <Content Include="images\cancel.png" />
     <Content Include="images\megastore.png" />
+    <Content Include="images\Products\football.jpg" />
     <Content Include="images\Products\hunted.jpg" />
     <Content Include="images\Products\s7.jpg" />
+    <Content Include="images\Products\stormblood.jpg" />
     <Content Include="images\Products\zelda.jpg" />
     <Content Include="IndexTest.aspx" />
     <Content Include="LoginUser.ascx" />

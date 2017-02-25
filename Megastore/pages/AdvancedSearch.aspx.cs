@@ -9,14 +9,19 @@ namespace Megastore.pages
 {
     public partial class AdvancedSearch : System.Web.UI.Page
     {
+        string category;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            // So category stays the same as selected
+            if (!Page.IsPostBack)
+            {
+                category = Request.QueryString["category"];
+                ddlSubject.SelectedValue = category;
+            }
         }
 
         protected void searchBtn_Click(object sender, EventArgs e)
         {
-            
 
             if (ddlSubject.SelectedItem.ToString().Trim() == "Book")
             {
@@ -51,7 +56,7 @@ namespace Megastore.pages
             {
                 
                 Response.Redirect("AdvancedSearch.aspx?category=Game&name=%" + searchfield.Text + "%");
-               
+                
             }
 
         }

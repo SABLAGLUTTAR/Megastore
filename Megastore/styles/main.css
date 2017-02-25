@@ -5,6 +5,10 @@
     font-size: 15px;
 }
 
+body {
+    overflow: scroll;
+}
+
 .log {
     float: right;
     padding: 10px;
@@ -82,7 +86,7 @@ a.one:hover, a.one:active {
 }
 
 #headerContainer {
-    padding: 40px;
+    padding: 25px;
     text-align: center;
     margin-left: 31%;
     background-color: white;
@@ -114,6 +118,8 @@ a.one:hover, a.one:active {
     color: rgb(255,255,255);
     font-size: 14px;
 }
+
+
 
 
 

@@ -42,8 +42,14 @@
 
                     <table id="search">
                         <tr>
+                        </tr>
+                        <tr>
                             <td>
+
+
+
                                 <asp:TextBox ID="searchBox" runat="server" Width="200px" Height="20px" BorderWidth="2" BorderColor="Red"></asp:TextBox>
+
                             </td>
                             <td>
                                 <asp:LinkButton ID="button"
@@ -54,6 +60,17 @@
                             <td><a href="AdvancedSearch.aspx">Advanced</a>
                             </td>
                             <td>
+
+                                <asp:LinkButton ID="Welcome"
+                                    Text="Welcome"
+                                    runat="server" Visible="false" /></td>
+                            <td>
+
+                                <asp:LinkButton ID="LinkButton1"
+                                    Text="Log out"
+                                    runat="server" OnClick="LinkButton1_Click" Visible="false" /></td>
+                            
+                            <td>
                                 <asp:LoginView ID="LoginView1" runat="server">
                                     <LoggedInTemplate>
                                     </LoggedInTemplate>
@@ -62,12 +79,12 @@
                             <uc1:LoginUser runat="server" ID="LoginUser" OnLoggedIn="OnLoggedIn" />
                                     </AnonymousTemplate>
                                 </asp:LoginView>
-                                <asp:LinkButton ID="LinkButton1"
-                                    Text="Log out"
-                                    runat="server" OnClick="LinkButton1_Click" Visible="false" /></td>
+                            </td>
                         </tr>
                     </table>
+
                 </div>
+
             </div>
 
             <div class="topmenu">

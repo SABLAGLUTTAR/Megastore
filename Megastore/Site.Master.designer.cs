@@ -76,13 +76,13 @@ namespace Megastore {
         protected global::System.Web.UI.WebControls.LinkButton button;
         
         /// <summary>
-        /// LoginView1 control.
+        /// Welcome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.WebControls.LinkButton Welcome;
         
         /// <summary>
         /// LinkButton1 control.
@@ -92,6 +92,15 @@ namespace Megastore {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
+        /// LoginView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView LoginView1;
         
         /// <summary>
         /// rightbarHolder control.

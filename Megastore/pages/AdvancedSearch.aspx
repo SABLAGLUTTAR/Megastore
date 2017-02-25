@@ -19,12 +19,13 @@
         <asp:TextBox runat="server" ID="searchfield"></asp:TextBox>
         <asp:LinkButton runat="server" ID="searchBtn" OnClick="searchBtn_Click" Text="Search" /><br />
     </div>
+    <br />
     <div>
         <asp:Label runat="server" ID="searchlabel" Text=""></asp:Label>
 
         <asp:UpdatePanel runat="server" ID="updatePanelIndex">
             <ContentTemplate>
-                <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="sqlDataSource1" ForeColor="Black" AutoGenerateColumns="false">
+                <asp:GridView ID="GridView1" Font-Bold="true" ShowHeader="False" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="sqlDataSource1" ForeColor="Black" AutoGenerateColumns="false">
                     <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
                     <AlternatingRowStyle BackColor="#FFFFFF" />
                     <FooterStyle BackColor="#CCCCCC" />
