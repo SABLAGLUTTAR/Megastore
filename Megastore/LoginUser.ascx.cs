@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,14 +13,22 @@ namespace Megastore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Login1.UserNameLabelText = "E-mail: ";
-            Login1.RememberMeText = "Remember me";
-            Login1.TitleText = "";
-            Login1.LoginButtonType = ButtonType.Link;
-            Login1.BorderPadding.Equals(150);
-            Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
-            Login1.PasswordRecoveryText = "Password recovery";
-            Login1.PasswordRequiredErrorMessage = "Please enter password!";
+            if (Request.Cookies["aCookie"] != null)
+                {
+                Response.Redirect("IndexTest.aspx", true);
+            }
+            else
+            {
+                Login1.UserNameLabelText = "E-mail: ";
+                Login1.RememberMeText = "Remember me";
+                Login1.TitleText = "";
+                Login1.LoginButtonType = ButtonType.Link;
+                Login1.BorderPadding.Equals(150);
+                Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
+                Login1.PasswordRecoveryText = "Password recovery";
+                Login1.PasswordRequiredErrorMessage = "Please enter password!";
+            }
+
         }
 
         protected void OnAuthenticate(object sender, AuthenticateEventArgs e)
@@ -44,11 +53,15 @@ namespace Megastore
 
                 if (loginSuccessful)
                 {
-                    Response.Cookies["user"].Value = username;
-                    Response.Cookies["user"].Expires = DateTime.Now.AddDays(1);
-                    Response.Cookies["true"].Value = "true";
-                    Response.Cookies["true"].Expires = DateTime.Now.AddDays(1);
-                    Response.Redirect("AdvancedSeach.aspx", true);
+                    HttpCookie aCookie = new HttpCookie("userInfo");
+                    aCookie.Values["userName"] = username;
+                    aCookie.Values["lastVisit"] = DateTime.Now.ToString();
+                    aCookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(aCookie);
+                    FormsAuthentication.SetAuthCookie("username", true);
+                    Response.Redirect("Index.aspx", true);
+                    Login1.Visible = false;
+
 
                 }
                 else

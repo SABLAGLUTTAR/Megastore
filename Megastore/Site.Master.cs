@@ -14,6 +14,7 @@ namespace Megastore
 
         }
 
+
         protected void button_Click(object sender, EventArgs e)
         {
             Response.Redirect("SearchResult.aspx?search=" +"%" + searchBox.Text +"%");

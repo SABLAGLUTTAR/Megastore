@@ -85,13 +85,13 @@ namespace Megastore {
         protected global::System.Web.UI.WebControls.LoginView LoginView1;
         
         /// <summary>
-        /// rightbar control.
+        /// rightbarHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder rightbar;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder rightbarHolder;
         
         /// <summary>
         /// Timer1 control.

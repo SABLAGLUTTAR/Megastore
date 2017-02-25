@@ -17,7 +17,7 @@
             <asp:ListItem>Book</asp:ListItem>
         </asp:DropDownList>
         <asp:TextBox runat="server" ID="searchfield"></asp:TextBox>
-        <asp:Button runat="server" ID="searchBtn" OnClick="searchBtn_Click" Text="Search" /><br />
+        <asp:LinkButton runat="server" ID="searchBtn" OnClick="searchBtn_Click" Text="Search" /><br />
     </div>
     <div>
         <asp:Label runat="server" ID="searchlabel" Text=""></asp:Label>
