@@ -151,6 +151,7 @@
     <Content Include="pages\Index.aspx" />
     <Content Include="images\Products\eu4.png" />
     <Content Include="pages\PasswordRecovery.aspx" />
+    <Content Include="pages\ProductDetails.aspx" />
     <Content Include="pages\Products.aspx" />
     <Content Include="pages\Registration.aspx" />
     <Content Include="pages\SearchResult.aspx" />
@@ -252,6 +253,13 @@
     </Compile>
     <Compile Include="pages\PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>

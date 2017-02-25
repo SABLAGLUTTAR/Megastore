@@ -8,6 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
     
     <asp:UpdatePanel runat="server" ID="updatePanelIndex"><ContentTemplate>
+            
     <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="productsData" ForeColor="Black" AutoGenerateColumns="false">
        <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
          <AlternatingRowStyle BackColor="#FFFFFF" />
@@ -32,6 +33,13 @@
                 DataTextFormatString="{0:c}"
                 HeaderText="Price"
                 Target="" />
+            <asp:HyperLinkField DataTextField="Id"
+                ItemStyle-Width="200px"
+                DataTextFormatString="{0:c}"
+                DataNavigateUrlFields="Id"
+                DataNavigateUrlFormatString="~\Pages\ProductDetails.aspx?Id={0}"
+                HeaderText="Title"
+                Target="" />
             <asp:TemplateField ItemStyle-Width="200px" ShowHeader="false" ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
                     <asp:LinkButton Text="Add to Cart" runat="server" CommandArgument='<%#Eval("Name")%>' CommandName="Add" />
@@ -41,7 +49,7 @@
     </asp:GridView>
         </ContentTemplate>
         </asp:UpdatePanel>
-    <asp:SqlDataSource ID="productsData" runat="server" ConnectionString="<%$ ConnectionStrings:dataConn %>" ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product.product_name AS Name, categories.category_name AS Category, product.product_description AS Description, product.price_per_unit AS Price, product.unit AS Unit, product.image_url AS Image FROM categories INNER JOIN product ON categories.categories_id = product.categories_catogories_id INNER JOIN product_type ON product.product_type_idproduct_type = product_type.product_type_id"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="productsData" runat="server" ConnectionString="<%$ ConnectionStrings:dataConn %>" ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>" SelectCommand="SELECT product_type.type_name AS Type, product_id As Id, product.product_name AS Name, categories.category_name AS Category, product.product_description AS Description, product.price_per_unit AS Price, product.unit AS Unit, product.image_url AS Image FROM categories INNER JOIN product ON categories.categories_id = product.categories_catogories_id INNER JOIN product_type ON product.product_type_idproduct_type = product_type.product_type_id"></asp:SqlDataSource>
 
 
 </asp:Content>

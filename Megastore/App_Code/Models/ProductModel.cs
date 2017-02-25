@@ -23,6 +23,22 @@ namespace Megastore.pages
             }
         }
 
+        public product GetProduct(int id)
+        {
+            try
+            {
+                using (etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities())
+                {
+                    product products = db.products.Find(id);
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public String UpdateProduct(int id, product product)
         {
             try
