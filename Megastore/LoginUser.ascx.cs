@@ -13,21 +13,16 @@ namespace Megastore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["aCookie"] != null)
-                {
-                Response.Redirect("IndexTest.aspx", true);
-            }
-            else
-            {
-                Login1.UserNameLabelText = "E-mail: ";
-                Login1.RememberMeText = "Remember me";
-                Login1.TitleText = "";
-                Login1.LoginButtonType = ButtonType.Link;
-                Login1.BorderPadding.Equals(150);
-                Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
-                Login1.PasswordRecoveryText = "Password recovery";
-                Login1.PasswordRequiredErrorMessage = "Please enter password!";
-            }
+
+            Login1.UserNameLabelText = "E-mail: ";
+            Login1.RememberMeText = "Remember me";
+            Login1.TitleText = "";
+            Login1.LoginButtonType = ButtonType.Link;
+            Login1.BorderPadding.Equals(150);
+            Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
+            Login1.PasswordRecoveryText = "Password recovery";
+            Login1.PasswordRequiredErrorMessage = "Please enter password!";
+
 
         }
 
@@ -53,12 +48,9 @@ namespace Megastore
 
                 if (loginSuccessful)
                 {
-                    HttpCookie aCookie = new HttpCookie("userInfo");
-                    aCookie.Values["userName"] = username;
-                    aCookie.Values["lastVisit"] = DateTime.Now.ToString();
-                    aCookie.Expires = DateTime.Now.AddDays(1);
-                    Response.Cookies.Add(aCookie);
-                    FormsAuthentication.SetAuthCookie("username", true);
+                    Response.Cookies["true"].Value = "true";
+                    Response.Cookies["true"].Expires = DateTime.Now.AddDays(1);
+
                     Response.Redirect("Index.aspx", true);
                     Login1.Visible = false;
 
@@ -66,7 +58,7 @@ namespace Megastore
                 }
                 else
                 {
-                    Response.Redirect("Registration.aspx", true);
+                    Response.Redirect("PasswordRecovery.aspx", true);
                 }
 
 

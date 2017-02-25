@@ -5,6 +5,24 @@
     font-size: 15px;
 }
 
+.log {
+    float: right;
+    padding: 10px;
+    text-align: right;
+}
+
+    .log a:link {
+        float: right;
+        padding: 10px;
+        text-align: right;
+    }
+
+    .log a:visited {
+        float: right;
+        padding: 10px;
+        text-align: right;
+    }
+
 a:link, a:visited {
     background-color: #f44336;
     color: white;
@@ -170,7 +188,9 @@ a.one:hover, a.one:active {
     width: 100%;
 }
 
-.right a:link {background: none}
+    .right a:link {
+        background: none;
+    }
 
 
 
@@ -204,5 +224,3 @@ a.one:hover, a.one:active {
         padding: 15px;
         text-align: center;
     }
-
-

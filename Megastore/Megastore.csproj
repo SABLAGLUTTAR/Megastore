@@ -150,10 +150,12 @@
     <Content Include="pages\AdvancedSearch.aspx" />
     <Content Include="pages\Index.aspx" />
     <Content Include="images\Products\eu4.png" />
+    <Content Include="pages\PasswordRecovery.aspx" />
     <Content Include="pages\Products.aspx" />
     <Content Include="pages\Registration.aspx" />
     <Content Include="pages\SearchResult.aspx" />
     <Content Include="pages\Selectedproduct.aspx" />
+    <Content Include="pages\SignedIn.aspx" />
     <Content Include="pages\SubCategory.aspx" />
     <Content Include="scripts\jquery-1.7.1.js" />
     <Content Include="Site.Master" />
@@ -244,6 +246,13 @@
     <Compile Include="pages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\PasswordRecovery.aspx.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\PasswordRecovery.aspx.designer.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -271,6 +280,13 @@
     </Compile>
     <Compile Include="pages\Selectedproduct.aspx.designer.cs">
       <DependentUpon>Selectedproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SignedIn.aspx.cs">
+      <DependentUpon>SignedIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\SignedIn.aspx.designer.cs">
+      <DependentUpon>SignedIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\SubCategory.aspx.cs">
       <DependentUpon>SubCategory.aspx</DependentUpon>

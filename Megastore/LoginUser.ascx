@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Login ID="Login1" runat="server" OnAuthenticate="OnAuthenticate">
+                <asp:Login ID="Login1" runat="server" OnAuthenticate="OnAuthenticate" >
                 </asp:Login>
             </td>
         </tr>
