@@ -9,7 +9,7 @@
     
     FILTER THE DATA
 
-    <asp:GridView ID="CartGrid" runat="server" DataSourceID="ObjectDataSource1">
+    <asp:GridView ID="CartGrid" runat="server">
     </asp:GridView>
     <br />
     <br />
