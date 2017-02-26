@@ -6,14 +6,27 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
+      padding-top: 5px;
+      padding-bottom: 1px;
+      margin-bottom: 15px;
+    }
+
+    .navbar li a{
+      color: black;
+    }
+
+    .navbar-brand{
+      color: black;
+    }
+    
+    .input-group {
+      font-size: 12px;
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -39,7 +52,7 @@
 </head>
 <body>
 <div class="container">
-<nav class="navbar navbar">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -47,7 +60,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">Megastore</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -55,7 +68,21 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
+      
+          <li>
+        <form class="navbar-form navbar-left">
+            <div class="input-group">
+                <input type="text" class="form-control input-sm" placeholder="Search">
+                 <div class="input-group-btn">
+                  <button class="btn btn-sm" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                 </div>
+            </div>
+        </form>
+              </li>
+          </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
