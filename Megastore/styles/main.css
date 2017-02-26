@@ -170,13 +170,12 @@ a.one:hover, a.one:active {
 
 .rightbar {
     width: 200px;
-    background-color: #fff;
-    border: 0px;
-    margin-left: 64%;
-    margin-top: 10px;
+    border: 1px;
+    margin-left: 81%;
     text-align: left;
     min-height: 450px;
-    position: absolute;
+    position: relative;
+
 }
 
     .rightbar a:link {
