@@ -30,7 +30,7 @@
                 DataTextFormatString="{0:c}"
                 HeaderText="Price"
                 Target="" />
-            <asp:HyperLinkField Text="Add to Cart" 
+            <asp:HyperLinkField Text="View Details" 
                 ItemStyle-Width="200px"
                 DataNavigateUrlFields="Id"
                 DataNavigateUrlFormatString="~\Pages\ProductDetails.aspx?Id={0}"

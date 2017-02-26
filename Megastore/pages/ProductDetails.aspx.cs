@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -37,6 +38,29 @@ namespace Megastore.pages
                 ddlAmount.AppendDataBoundItems = true;
                 ddlAmount.DataBind();
             }
+        }
+
+        protected void addToCart(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(Request.QueryString["id"]);
+
+            ProductModel model = new ProductModel();
+            product product = model.GetProduct(id);
+
+            ArrayList tmpArrayList = (ArrayList)Session["cartList"];
+            ArrayList cartList = new ArrayList();
+
+            if (tmpArrayList == null)
+            {
+                cartList.Add(product);
+            }
+            else
+            {
+                cartList = tmpArrayList;
+                cartList.Add(product);
+            }
+
+            Session["CartList"] = cartList;
         }
     }
 }

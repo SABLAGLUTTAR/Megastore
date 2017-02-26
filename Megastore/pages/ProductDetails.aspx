@@ -25,7 +25,7 @@
                 <br />
                 Quantity:<asp:DropDownList ID="ddlAmount" runat="server"></asp:DropDownList><br />
                 <br />
-                <asp:LinkButton ID="btnAdd" runat="server" CssClass="button" Text="Add Product" />
+                <asp:LinkButton ID="btnAdd" runat="server" OnClick="addToCart" CssClass="button" Text="Add Product" />
                 <br />
                 <asp:Label ID="lblResult" runat="server"></asp:Label>
             </td>
