@@ -9,7 +9,21 @@
     
     FILTER THE DATA
 
-    <asp:GridView ID="CartGrid" runat="server">
+    <asp:GridView ID="CartGrid" runat="server" AutoGenerateColumns="false" OnRowDeleting="RemoveSelected">
+        <Columns>
+            <asp:BoundField DataField="product_name" HeaderText="Name" />
+            <asp:BoundField DataField="price_per_unit" HeaderText="Price" />
+            <asp:BoundField DataField="unit" HeaderText="Unit" />
+            
+            <asp:TemplateField>
+            <ItemTemplate>
+            <asp:LinkButton ID="delSelected" runat="server" Text="Delete" CommandName="Delete"></asp:LinkButton>
+           
+            </ItemTemplate>
+            <ItemStyle Width="100px" />
+       
+            </asp:TemplateField>
+        </Columns>
     </asp:GridView>
     <br />
     <br />

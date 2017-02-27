@@ -41,9 +41,24 @@ namespace Megastore.pages
 
         }
 
-        protected void Remove_Selected(object sender, EventArgs e)
+        protected void RemoveSelected(object sender, GridViewDeleteEventArgs e)
         {
+            ArrayList cartList = (ArrayList)Session["cartList"];
 
+            GridViewRow row = (GridViewRow)CartGrid.Rows[e.RowIndex];
+
+            //String name = (string)CartGrid.DataKeys[e.RowIndex].Value;
+            String name = CartGrid.SelectedRow.Cells[0].Text;
+
+            foreach (product p in cartList)
+            {
+                if (p.product_name.Equals(name))
+                {
+                    cartList.Remove(p);
+                }
+            }
+
+            CartGrid.DataBind();
         }
 
         protected void Calc_Total()
