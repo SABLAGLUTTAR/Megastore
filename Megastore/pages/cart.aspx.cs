@@ -47,16 +47,25 @@ namespace Megastore.pages
 
             GridViewRow row = (GridViewRow)CartGrid.Rows[e.RowIndex];
 
+            String name = row.Cells[0].Text;
             //String name = (string)CartGrid.DataKeys[e.RowIndex].Value;
-            String name = CartGrid.SelectedRow.Cells[0].Text;
+            //String name = CartGrid.SelectedRow.Cells[1].Text;
+            product temp = null;
 
             foreach (product p in cartList)
             {
                 if (p.product_name.Equals(name))
                 {
-                    cartList.Remove(p);
+                    temp = p;
                 }
             }
+            
+            if(temp != (null))
+            {
+                cartList.Remove(temp);
+                Calc_Total();
+            }
+            
 
             CartGrid.DataBind();
         }

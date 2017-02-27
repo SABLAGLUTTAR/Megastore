@@ -6,8 +6,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="rightbarHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
-    
-    FILTER THE DATA
 
     <asp:GridView ID="CartGrid" runat="server" AutoGenerateColumns="false" OnRowDeleting="RemoveSelected">
         <Columns>
