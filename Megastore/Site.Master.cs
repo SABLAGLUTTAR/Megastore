@@ -41,6 +41,7 @@ namespace Megastore
             LoginView1.Visible = true;
             LinkButton1.Visible = false;
             Welcome.Visible = false;
+            Response.Redirect("Index.aspx");
         }
 
         protected void Welcome_Click(object sender, EventArgs e)

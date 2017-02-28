@@ -32,9 +32,10 @@ namespace Megastore
             string connStr = ConfigurationManager.ConnectionStrings["dataConn"].ToString();
             using (MySql.Data.MySqlClient.MySqlConnection con = new MySql.Data.MySqlClient.MySqlConnection(connStr))
             {
+                
                 string username = Login1.UserName.ToString();
                 string password = Login1.Password.ToString();
-                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("select customer_email, customer_password from customer where customer_email like @username and customer_password = @password;");
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand("select * from customer where customer_email like @username and customer_password = @password;");
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Connection = con;
@@ -52,7 +53,7 @@ namespace Megastore
                     Response.Cookies["true"].Expires = DateTime.Now.AddDays(1);
                     Response.Cookies["username"].Value = username;
                     Response.Cookies["username"].Expires = DateTime.Now.AddDays(1);
-
+                    
                     Response.Redirect("Index.aspx", true);
                     Login1.Visible = false;
 
