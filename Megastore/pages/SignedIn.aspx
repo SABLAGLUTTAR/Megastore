@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="rightbarHolder" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
+    <asp:Label runat="server" ID="tempLbl"></asp:Label>
 </asp:Content>

@@ -42,5 +42,10 @@ namespace Megastore
             LinkButton1.Visible = false;
             Welcome.Visible = false;
         }
+
+        protected void Welcome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignedIn.aspx", true);
+        }
     }
 }

@@ -194,7 +194,7 @@
 
         <script>
             (function ($) {
-                var element = $('.rightbar'),
+                var element = $('.col-sm-2 sidenav'),
                     originalY = element.offset().top;
 
 

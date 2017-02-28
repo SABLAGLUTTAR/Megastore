@@ -11,7 +11,7 @@ namespace Megastore.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            tempLbl.Text= "Welcome" + Request.Cookies["username"].Value;
         }
     }
 }

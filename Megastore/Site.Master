@@ -14,8 +14,12 @@
         </asp:ContentPlaceHolder>
     </title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <link href="Styles/main.css" rel="stylesheet" />
-    <link href="Styles/menu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://bootswatch.com/simplex/_variables.scss" />
+    
+    <link rel="stylesheet" href="https://bootswatch.com/simplex/_bootswatch.scss" />
+    <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -26,124 +30,133 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
 
-
-
-        <div class="wrapper">
-            <div class="top">
-                <div id="logo">
-                    <asp:Image ID="img" runat="server" ImageUrl="~/images/logo.png" Width="300px" Height="95px" />
+        <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">MegaStore</a>
                 </div>
-                <div id="triangle">
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="Index.aspx">Home</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"  >Books <span class="caret"></span></a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="Products.aspx?category=Book">All</a></li>
+                                <li><a href="SubCategory.aspx?category=Book&subcat=Children">Children</a></li>
+                                <li><a href="SubCategory.aspx?category=Book&subcat=Manga">Manga</a></li>
+                                <li><a href="SubCategory.aspx?category=Book&subcat=Thriller">Thriller</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Movie<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Products.aspx?category=Movie">All</a></li>
+                                <li><a href="SubCategory.aspx?category=Movie&subcat=Children">Children</a></li>
+                                <li><a href="SubCategory.aspx?category=Movie&subcat=Action">Action</a></li>
+                                <li><a href="SubCategory.aspx?category=Movie&subcat=Thriller">Thriller</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Smartphone<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Products.aspx?category=Smartphone">All</a></li>
+                                <li><a href="SubCategory.aspx?category=Smartphone&subcat=Iphone">Iphone</a></li>
+                                <li><a href="SubCategory.aspx?category=Smartphone&subcat=Android">Android</a></li>
+                                <li><a href="SubCategory.aspx?category=Smartphone&subcat=Blackberry">Blackberry</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Computer<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Products.aspx?category=Computer">All</a></li>
+                                <li><a href="SubCategory.aspx?category=Computer&subcat=Processor">Processors</a></li>
+                                <li><a href="SubCategory.aspx?category=Computer&subcat=Graphics">Graphics Card</a></li>
+                                <li><a href="SubCategory.aspx?category=Computer&subcat=Motherboard">Motherboard</a></li>
+                                <li><a href="SubCategory.aspx?category=Computer&subcat=Ram">RAM</a></li>
+                                <li><a href="SubCategory.aspx?category=Computer&subcat=Harddrive">HDD,SSD</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                
+                                <li><a href="Products.aspx?category=Game">All</a></li>
+                                <li><a href="SubCategory.aspx?category=Game&subcat=RPG">RPG</a></li>
+                                <li><a href="SubCategory.aspx?category=Game&subcat=Fps">FPS</a></li>
+                                <li><a href="SubCategory.aspx?category=Game&subcat=Strategy">Strategy</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                            <asp:TextBox ID="searchBox" runat="server" class="form-control" Text="Search"></asp:TextBox>
+                            
+                        </li>
+                        
+
+                        <li>
+                            <asp:LinkButton ID="LinkButton2"
+                                OnCommand="button_Click"
+                                runat="server"><i class="glyphicon glyphicon-search"></i></asp:LinkButton>
+                        </li>
+                        <li><a href="AdvancedSearch.aspx">Advance</a>
+                        </li>
+
+                        <li>
+
+                            <asp:LinkButton ID="Welcome"
+                                Text="Welcome"
+                                runat="server" Visible="false" /></li>
+                        <li>
+
+                            <asp:LinkButton ID="LinkButton1"
+                                Text="Log out"
+                                runat="server" OnClick="LinkButton1_Click" Visible="false" /></li>
+
+                        <li>
+                            <asp:LoginView ID="LoginView1" runat="server">
+                                <LoggedInTemplate>
+                                </LoggedInTemplate>
+                                <AnonymousTemplate>
+
+                                    <uc1:LoginUser runat="server" ID="LoginUser" onloggedin="OnLoggedIn" />
+                                </AnonymousTemplate>
+
+                            </asp:LoginView>
+                        </li>
+
+                        <li><a href="cart.aspx">Cart</a></li>
+                    </ul>
+
                 </div>
-
-
-
-                <div id="headerContainer">
-
-                    <table id="search">
-                        <tr>
-                        </tr>
-                        <tr>
-                            <td>
-
-
-
-                                <asp:TextBox ID="searchBox" runat="server" Width="200px" Height="20px" BorderWidth="2" BorderColor="Red"></asp:TextBox>
-
-                            </td>
-                            <td>
-                                <asp:LinkButton ID="button"
-                                    Text="Search"
-                                    OnCommand="button_Click"
-                                    runat="server" />
-                            </td>
-                            <td><a href="AdvancedSearch.aspx">Advanced</a>
-                            </td>
-                            <td>
-
-                                <asp:LinkButton ID="Welcome"
-                                    Text="Welcome"
-                                    runat="server" Visible="false" /></td>
-                            <td>
-
-                                <asp:LinkButton ID="LinkButton1"
-                                    Text="Log out"
-                                    runat="server" OnClick="LinkButton1_Click" Visible="false" /></td>
-
-                            <td>
-                                <asp:LoginView ID="LoginView1" runat="server">
-                                    <LoggedInTemplate>
-                                    </LoggedInTemplate>
-                                    <AnonymousTemplate>
-                                        Please click Login to continue.
-                            <uc1:LoginUser runat="server" ID="LoginUser" OnLoggedIn="OnLoggedIn" />
-                                    </AnonymousTemplate>
-                                </asp:LoginView>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-
             </div>
+        </nav>
 
-            <div class="topmenu">
-                <ul>
-                    <li><a class="one" href="Index.aspx">Home</a></li>
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-10 text-left">
+                    <div class="content">
+                        <div class="well">
+                        <asp:ContentPlaceHolder ID="contentBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                            </div>
+                    </div>
+                </div>
 
-                    <li class="dropdown">
-                        <a class="one" href="Products.aspx?category=Book" class="dropbtn">Books</a>
-                        <div class="dropdown-content">
-                            <a class="one" href="SubCategory.aspx?category=Book&subcat=Children">Children</a>
-                            <a class="one" href="SubCategory.aspx?category=Book&subcat=Manga">Manga</a>
-                            <a class="one" href="SubCategory.aspx?category=Book&subcat=Thriller">Thriller</a>
-                        </div>
+                <div class="col-sm-2 sidenav">
 
-                    </li>
-                    <li class="dropdown">
-                        <a class="one" href="Products.aspx?category=Movie" class="dropbtn">Movies</a>
-                        <div class="dropdown-content">
-                            <a class="one" href="SubCategory.aspx?category=Movie&subcat=Children">Children</a>
-                            <a class="one" href="SubCategory.aspx?category=Movie&subcat=Action">Action</a>
-                            <a class="one" href="SubCategory.aspx?category=Movie&subcat=Thriller">Thriller</a>
-                        </div>
-
-                    </li>
-                    <li class="dropdown">
-                        <a class="one" href="Products.aspx?category=Smartphone" class="dropbtn">Smartphones</a>
-                        <div class="dropdown-content">
-                            <a class="one" href="SubCategory.aspx?category=Smartphone&subcat=Iphone">Iphone</>
-                            <a class="one" href="SubCategory.aspx?category=Smartphone&subcat=Android">Android</a>
-                                <a class="one" href="SubCategory.aspx?category=Smartphone&subcat=Blackberry">Blackberry</a>
-                        </div>
-
-                    </li>
-                    <li class="dropdown">
-                        <a class="one" href="Products.aspx?category=Computer" class="dropbtn">Computers</a>
-                        <div class="dropdown-content">
-                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Processor">Processors</a>
-                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Graphics">Graphics card</a>
-                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Motherboard">Motherboard</a>
-                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Ram">RAM</a>
-                            <a class="one" href="SubCategory.aspx?category=Computer&subcat=Harddrive">HDD,SSD</a>
-                        </div>
-
-                    </li>
-                    <li class="dropdown">
-                        <a class="one" href="Products.aspx?category=Game" class="dropbtn">Games</a>
-                        <div class="dropdown-content">
-                            <a class="one" href="SubCategory.aspx?category=Game&subcat=RPG">RPG</a>
-                            <a class="one" href="SubCategory.aspx?category=Game&subcat=Fps">FPS</a>
-                            <a class="one" href="SubCategory.aspx?category=Game&subcat=Strategy">Strategy</a>
-                        </div>
-
-                    </li>
-                    <li><a class="one" href="cart.aspx">Cart</a></li>
-                </ul>
-            </div>
-
-            <div class="right">
-                <div class="rightbar">
                     <asp:ContentPlaceHolder ID="rightbarHolder" runat="server">
                         <asp:Timer ID="Timer1" Interval="10000" runat="server" />
 
@@ -169,32 +182,26 @@
                                     Height="128px" Width="200px" />
                             </ContentTemplate>
                         </asp:UpdatePanel>
-
-
                     </asp:ContentPlaceHolder>
                 </div>
+
             </div>
-
-            <div class="content">
-                <asp:ContentPlaceHolder ID="contentBody" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-
-
-
-
-
-
-            <div class="clear"></div>
-
-            <div class="clear"></div>
-            <div class="footer">
-            </div>
-
         </div>
+
+        <div class="clear"></div>
+
+        <div class="clear"></div>
+
+        <footer class="container-fluid text-center">
+            <i>
+                <p>Footer company ALL RIGHTS RESERVERD</p>
+            </i>
+        </footer>
+        </div>
+
         <script>
             (function ($) {
-                var element = $('.rightbar'),
+                var element = $('.col-sm-2'),
                     originalY = element.offset().top;
 
 
