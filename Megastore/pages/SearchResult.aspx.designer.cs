@@ -49,12 +49,12 @@ namespace Megastore.pages {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// productsData control.
+        /// sqlTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource productsData;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlTest;
     }
 }

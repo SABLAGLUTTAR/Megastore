@@ -13,7 +13,8 @@
 
     <asp:UpdatePanel runat="server" ID="updatePanelIndex">
         <ContentTemplate>
-            <asp:GridView ID="GridView1" Font-Bold="true" AllowSorting="true" GridLines="Horizontal" runat="server" BackColor="White" Width="100%" CellPadding="5" DataSourceID="sqlTest" ForeColor="Black" AutoGenerateColumns="false">
+            <asp:GridView ID="GridView1" ShowHeader="False" CssClass="table" Font-Bold="true" AllowSorting="true" GridLines="None" runat="server" Width="100%" CellPadding="5" DataSourceID="sqlTest" AutoGenerateColumns="false" BorderStyle="None">
+
 
                 <EmptyDataTemplate>There where no products found!</EmptyDataTemplate>
                 <AlternatingRowStyle BackColor="#FFFFFF" />
@@ -36,7 +37,7 @@
                         DataTextFormatString="{0:c}"
                         HeaderText="Price"
                         Target="" />
-                    <asp:HyperLinkField Text="Add to Cart"
+                    <asp:HyperLinkField Text="View Details"
                         ItemStyle-Width="200px"
                         DataNavigateUrlFields="Id"
                         DataNavigateUrlFormatString="~\Pages\ProductDetails.aspx?Id={0}"

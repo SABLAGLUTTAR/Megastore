@@ -31,12 +31,6 @@ namespace Megastore.pages
                 imgProduct.ImageUrl = "~/Products/" + product.image_url;
                 lblItemNr.Text = product.product_id.ToString();
                 lblUnit.Text = product.unit.ToString();
-
-                //Fill amount list with numbers 1-20
-                int[] amount = Enumerable.Range(1, 20).ToArray();
-                ddlAmount.DataSource = amount;
-                ddlAmount.AppendDataBoundItems = true;
-                ddlAmount.DataBind();
             }
         }
 

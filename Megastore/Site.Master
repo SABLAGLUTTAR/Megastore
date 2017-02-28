@@ -30,7 +30,6 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
 
-        <div class="container">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -143,7 +142,7 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
         <div class="container-fluid text-center">
             <div class="row content">
                 <div class="col-sm-10 text-left">
@@ -158,6 +157,7 @@
                 <div class="col-sm-2 sidenav">
 
                     <asp:ContentPlaceHolder ID="rightbarHolder" runat="server">
+                        </asp:ContentPlaceHolder>
                         <asp:Timer ID="Timer1" Interval="10000" runat="server" />
 
                         <asp:UpdatePanel ID="up1" runat="server">
@@ -165,24 +165,31 @@
                                 <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
                             </Triggers>
                             <ContentTemplate>
+                                
                                 <asp:AdRotator
                                     ID="AdRotator1"
                                     AdvertisementFile="ads/comAd.xml"
                                     runat="server"
-                                    Height="128px" Width="200px" />
+                                    Height="90px" Width="170px" />
+                                    <br /><br />
+                                
                                 <asp:AdRotator
                                     ID="AdRotator2"
                                     AdvertisementFile="ads/comAd.xml"
                                     runat="server"
-                                    Height="128px" Width="200px" />
+                                    Height="90px" Width="170px" />
+                                    <br /><br />
+                                
                                 <asp:AdRotator
                                     ID="AdRotator3"
                                     AdvertisementFile="ads/comAd.xml"
                                     runat="server"
-                                    Height="128px" Width="200px" />
+                                    Height="90px" Width="170px" />
+                                    <br /><br />
+
                             </ContentTemplate>
                         </asp:UpdatePanel>
-                    </asp:ContentPlaceHolder>
+                    
                 </div>
 
             </div>
@@ -192,12 +199,13 @@
 
         <div class="clear"></div>
 
+            </div>
+
         <footer class="container-fluid text-center">
             <i>
                 <p>Footer company ALL RIGHTS RESERVERD</p>
             </i>
         </footer>
-        </div>
 
         <script>
             (function ($) {
