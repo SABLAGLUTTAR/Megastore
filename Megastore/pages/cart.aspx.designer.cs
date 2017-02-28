@@ -31,12 +31,12 @@ namespace Megastore.pages {
         protected global::System.Web.UI.WebControls.Label totalSum;
         
         /// <summary>
-        /// checkoutBtn control.
+        /// checkbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton checkoutBtn;
+        protected global::System.Web.UI.WebControls.Button checkbtn;
     }
 }

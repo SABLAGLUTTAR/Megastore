@@ -16,6 +16,11 @@ namespace Megastore.pages
             Calc_Total();
         }
 
+        protected void checkoutBtnClick(object sender, EventArgs e)
+        {
+
+        }
+
         protected void AddToGridView()
         {
             ArrayList cartList = (ArrayList)Session["cartList"];
