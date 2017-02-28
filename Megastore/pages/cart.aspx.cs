@@ -75,7 +75,8 @@ namespace Megastore.pages
             ArrayList cartList = (ArrayList)Session["cartList"];
 
             decimal temp = 0;
-
+            try { 
+            
             for (int i = 0; i < cartList.Count; i++)
             {
                 product p = (product)cartList[i];
@@ -83,6 +84,11 @@ namespace Megastore.pages
             }
 
             totalSum.Text = Convert.ToString(temp);
+            }
+            catch(Exception e)
+            {
+
+            }
         }
     }
 }

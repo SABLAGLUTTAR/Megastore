@@ -11,7 +11,28 @@ namespace Megastore.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            tempLbl.Text= "Welcome" + Request.Cookies["username"].Value;
+            
+        }
+
+        protected void ValidateBtn_Click(object sender, EventArgs e)
+        {
+            String email = Request.Cookies["username"].Value;
+            EmailTextbox.Text = email;
+            CustomerModel customerModel = new CustomerModel();
+            customer cust = UpdateCustomer();
+            lblResult.Text = customerModel.UpdateCustomer(email,cust);
+
+        }
+
+        private customer UpdateCustomer()
+        {
+            customer cust = new customer();
+            cust.customer_address = AddressTextbox.Text;
+            
+            cust.customer_email = EmailTextbox.Text;
+            cust.first_name = FNTextbox.Text;
+            cust.last_name = LNTextbox.Text;
+            return cust;
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Megastore.pages
 
         protected void addToCart(object sender, EventArgs e)
         {
+           
+                
             int id = Convert.ToInt32(Request.QueryString["id"]);
 
             ProductModel model = new ProductModel();
@@ -60,7 +62,10 @@ namespace Megastore.pages
                 cartList.Add(product);
             }
 
+           
             Session["CartList"] = cartList;
+            }
+
+            
         }
     }
-}

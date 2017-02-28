@@ -24,7 +24,7 @@ namespace Megastore.pages
             }
         }
 
-        public String UpdateCustomer(int id, customer customer)
+        public String UpdateCustomer(string id, customer customer)
         {
             try
             {

@@ -5,7 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
-    <table>
+   
+     <table>
         <tr>
             <td rowspan="4" style="width: 40%">
                 <asp:Image ID="imgProduct" Width="250px" runat="server" CssClass="detailsImage" />
@@ -41,4 +42,7 @@
             </td>
         </tr>
     </table>
+       
+
+    
 </asp:Content>
