@@ -11,22 +11,9 @@
                 <asp:Label ID="EmailLabel" runat="server" Text="E-mail: "></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="EmailTextbox" runat="server"></asp:TextBox>
+               <asp:Label ID="emailText" runat="server"></asp:Label>
             </td>
-            <td>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
-                    ControlToValidate="EmailTextbox"
-                    ValidationExpression="^([a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]){1,70}$"
-                    Display="Static"
-                    ErrorMessage="Incorrect e-mail!"
-                    EnableClientScript="False"
-                    runat="server" />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
-                    ControlToValidate="EmailTextbox"
-                    Display="Static"
-                    ErrorMessage="E-mail required!"
-                    runat="server" />
-            </td>
+            
         </tr>
         <tr>
             
@@ -109,5 +96,20 @@
                 <asp:Label runat="server" ID="lblResult"></asp:Label>
             </td>
         </tr>
+        
+        
+          
+                
+                
+           
+            
+        
     </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <asp:Button ID="Orderbtn" Text="My orders"
+                    OnClick="Orderbtn_Click"
+                    runat="server" />
 </asp:Content>

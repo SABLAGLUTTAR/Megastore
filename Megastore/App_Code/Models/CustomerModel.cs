@@ -30,6 +30,7 @@ namespace Megastore.pages
             {
                 etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities();
                 customer c = db.customers.Find(id);
+                
                 c.customer_address = customer.customer_address;
                 c.first_name = customer.first_name;
                 c.last_name = customer.last_name;
@@ -77,6 +78,22 @@ namespace Megastore.pages
             catch (Exception e)
             {
                 return "Error:" + e;
+            }
+        }
+
+        public customer GetCustomer(string id)
+        {
+            try
+            {
+                using (etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities())
+                {
+                    customer customers = db.customers.Find(id);
+                    return customers;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
     }
