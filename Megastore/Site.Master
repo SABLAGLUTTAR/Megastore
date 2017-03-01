@@ -171,21 +171,21 @@
                                     ID="AdRotator1"
                                     AdvertisementFile="ads/comAd.xml"
                                     runat="server"
-                                    Height="90px" Width="170px" />
+                                    Height="120px" Width="170px" />
                                     <br /><br />
                                 
                                 <asp:AdRotator
                                     ID="AdRotator2"
                                     AdvertisementFile="ads/comAd.xml"
                                     runat="server"
-                                    Height="90px" Width="170px" />
+                                    Height="120px" Width="170px" />
                                     <br /><br />
                                 
                                 <asp:AdRotator
                                     ID="AdRotator3"
                                     AdvertisementFile="ads/comAd.xml"
                                     runat="server"
-                                    Height="90px" Width="170px" />
+                                    Height="120px" Width="170px" />
                                     <br /><br />
 
                             </ContentTemplate>

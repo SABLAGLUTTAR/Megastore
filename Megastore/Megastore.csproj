@@ -124,10 +124,16 @@
     <Content Include="images\bg.png" />
     <Content Include="images\cancel.png" />
     <Content Include="images\megastore.png" />
+    <Content Include="ads\apple.png" />
+    <Content Include="ads\asus.jpg" />
     <Content Include="images\Products\football.jpg" />
+    <Content Include="ads\gigabyte.jpg" />
     <Content Include="images\Products\hunted.jpg" />
     <Content Include="images\Products\s7.jpg" />
+    <Content Include="ads\samsung.jpg" />
+    <Content Include="images\Products\sony.jpg" />
     <Content Include="images\Products\stormblood.jpg" />
+    <Content Include="ads\switch.jpg" />
     <Content Include="images\Products\zelda.jpg" />
     <Content Include="IndexTest.aspx" />
     <Content Include="LoginUser.ascx" />

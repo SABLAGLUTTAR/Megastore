@@ -15,6 +15,7 @@ namespace Megastore.pages
             // So category stays the same as selected
             if (!Page.IsPostBack)
             {
+                
                 category = Request.QueryString["category"];
                 ddlSubject.SelectedValue = category;
             }
@@ -22,7 +23,7 @@ namespace Megastore.pages
 
         protected void searchBtn_Click(object sender, EventArgs e)
         {
-
+           
             if (ddlSubject.SelectedItem.ToString().Trim() == "Book")
             {
                 
@@ -60,6 +61,8 @@ namespace Megastore.pages
                 Response.Redirect("AdvancedSearch.aspx?category=Game&name=%" + searchfield.Text + "%");
                 
             }
+
+            
 
         }
     }

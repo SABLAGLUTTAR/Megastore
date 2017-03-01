@@ -28,6 +28,38 @@
       <Keyword>Computer</Keyword>
     </Ad>
 
+    <Ad>
+      <ImageUrl>samsung.jpg</ImageUrl>
+      <NavigateUrl>http://www.samsung.com</NavigateUrl>
+      <AlternateText>Samsung</AlternateText>
+      <Impressions>20</Impressions>
+      <Keyword>Phone</Keyword>
+    </Ad>
+
+    <Ad>
+      <ImageUrl>asus.jpg</ImageUrl>
+      <NavigateUrl>http://www.asus.com</NavigateUrl>
+      <AlternateText>Asus corporation</AlternateText>
+      <Impressions>20</Impressions>
+      <Keyword>Computer</Keyword>
+    </Ad>
+
+    <Ad>
+      <ImageUrl>apple.png</ImageUrl>
+      <NavigateUrl>http://www.apple.com</NavigateUrl>
+      <AlternateText>Apple INC</AlternateText>
+      <Impressions>20</Impressions>
+      <Keyword>Computer</Keyword>
+    </Ad>
+
+    <Ad>
+      <ImageUrl>switch.jpg</ImageUrl>
+      <NavigateUrl>http://www.nintendo.com</NavigateUrl>
+      <AlternateText>Nintendo LTD</AlternateText>
+      <Impressions>20</Impressions>
+      <Keyword>Console</Keyword>
+    </Ad>
+
   </Advertisements>
 
 
