@@ -11,7 +11,7 @@ namespace Megastore.pages
 {
 
 
-    public partial class Admin
+    public partial class Admins
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Megastore.pages
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class Admins : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
