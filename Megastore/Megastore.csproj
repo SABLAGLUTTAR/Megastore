@@ -199,6 +199,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Content Include="App_Code\Models\AdminModel.cs" />
+    <Content Include="App_Code\Models\ShipmentModel.cs" />
     <Compile Include="category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
