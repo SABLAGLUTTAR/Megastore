@@ -32,7 +32,7 @@
     <br />
 
     <input type="hidden" name="upload" value="1" />
-    <input type="hidden" name="return" value="http://localhost:50750/index.aspx" />
+    <input type="hidden" name="return" value="http://localhost:50750/pages/index.aspx" />
     <input type="hidden" name="cmd" value="_cart" />
     <input type="hidden" name="business" value="payment@megastore.com" />
     <input type="hidden" name="currency_code" value="SEK" />
@@ -50,6 +50,7 @@
     <input type="hidden" name="amount_<%=i + 1 %>" value="<%=p.price_per_unit%>" />
     <input type="hidden" name="quantity_<%=i + 1 %>" value="1" />
     <%
+            
         }
     %>
 

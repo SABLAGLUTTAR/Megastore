@@ -13,6 +13,7 @@
         <asp:ContentPlaceHolder ID="title" runat="server">
         </asp:ContentPlaceHolder>
     </title>
+    <link href="styles/login.css" rel="stylesheet" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <link rel="stylesheet" href="https://bootswatch.com/simplex/_variables.scss" />
     

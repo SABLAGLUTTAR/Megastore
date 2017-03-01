@@ -1,0 +1,22 @@
+﻿#Loginview1 {
+    float: right;
+    padding: 10px;
+    text-align: right;
+}
+
+.modalBackground {
+    background-color: black;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.modalPopup {
+    border: 3px;
+    background-color: dimgrey;
+    text-align: right;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    color: gainsboro;
+    font-size: 14px;
+}

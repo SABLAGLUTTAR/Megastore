@@ -158,7 +158,6 @@
     <Content Include="pages\Products.aspx" />
     <Content Include="pages\Registration.aspx" />
     <Content Include="pages\SearchResult.aspx" />
-    <Content Include="pages\Selectedproduct.aspx" />
     <Content Include="pages\SignedIn.aspx" />
     <Content Include="pages\SubCategory.aspx" />
     <Content Include="scripts\jquery-1.7.1.js" />
@@ -181,6 +180,7 @@
   <ItemGroup>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="styles\login.css" />
     <Content Include="styles\main.css" />
     <Content Include="styles\menu.css" />
     <Content Include="styles\rightbar.css" />
@@ -292,13 +292,6 @@
     </Compile>
     <Compile Include="pages\SearchResult.aspx.designer.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\Selectedproduct.aspx.cs">
-      <DependentUpon>Selectedproduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\Selectedproduct.aspx.designer.cs">
-      <DependentUpon>Selectedproduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\SignedIn.aspx.cs">
       <DependentUpon>SignedIn.aspx</DependentUpon>
