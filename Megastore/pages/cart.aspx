@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
 
-    <asp:GridView ID="CartGrid" runat="server" AutoGenerateColumns="false" OnRowDeleting="RemoveSelected" ShowHeader="False" CssClass="table" Font-Bold="true" AllowSorting="true" GridLines="None" Width="100%" CellPadding="5" BorderStyle="None">
+    <asp:GridView ID="CartGrid" runat="server" AutoGenerateColumns="false" OnRowDeleting="RemoveSelected" ShowHeader="False" CssClass="table" Font-Bold="true" AllowSorting="true" GridLines="None" Width="100%" CellPadding="5" BorderStyle="None" OnSelectedIndexChanged="CartGrid_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="product_name" HeaderText="Name" />
             <asp:BoundField DataField="price_per_unit" HeaderText="Price" />
