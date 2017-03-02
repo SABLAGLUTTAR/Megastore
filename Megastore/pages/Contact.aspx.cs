@@ -6,13 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Megastore.pages
+namespace Megastore
 {
-    public partial class PasswordRecovery : System.Web.UI.Page
+    public partial class Contact : System.Web.UI.Page
     {
-        string email;
-        string password;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,8 +24,11 @@ namespace Megastore.pages
             //Password of your gmail address
             const string fromPassword = "Asdasd123";
             // Passing the values and make a email formate to display
-            string subject = "Password Recovery";
-            string body = "Your password is " + password;
+            string subject = YourSubject.Text.ToString();
+            string body = "From: " + YourName.Text + "\n";
+            body += "Email: " + YourEmail.Text + "\n";
+            body += "Subject: " + YourSubject.Text + "\n";
+            body += "Question: \n" + Comments.Text + "\n";
             // smtp settings
             var smtp = new System.Net.Mail.SmtpClient();
             {
@@ -45,24 +45,18 @@ namespace Megastore.pages
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            email = YourEmail.Text;
-            CustomerModel cm = new CustomerModel();
-            customer cust = cm.GetCustomer(email);
-
-
-            if (cust != null)
+            try
             {
-                password = cust.customer_password;
+                //here on button click what will done 
                 SendMail();
-            }
-
-            else
-            {
-                DisplayMessage.Text = "Email not found!";
+                DisplayMessage.Text = "Your Comments after sending the mail";
                 DisplayMessage.Visible = true;
+                YourSubject.Text = "";
+                YourEmail.Text = "";
+                YourName.Text = "";
+                Comments.Text = "";
             }
+            catch (Exception) { }
         }
-
     }
 }

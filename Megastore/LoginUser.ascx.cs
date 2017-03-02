@@ -18,7 +18,7 @@ namespace Megastore
             Login1.TitleText = "";
             Login1.LoginButtonType = ButtonType.Link;
             Login1.BorderPadding.Equals(150);
-            Login1.PasswordRecoveryUrl = "pages/Registration.aspx";
+            Login1.PasswordRecoveryUrl = "pages/PasswordRecovery.aspx";
             Login1.PasswordRecoveryText = "Password recovery";
             Login1.PasswordRequiredErrorMessage = "Please enter password!";
             Login1.DisplayRememberMe = false;
