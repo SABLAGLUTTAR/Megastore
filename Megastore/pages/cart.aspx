@@ -27,12 +27,12 @@
     <br />
     <br />
     Total Sum:
-    <asp:Label ID="totalSum" runat="server" AutoGenerateColumns="false"></asp:Label>
+    <asp:Label ID="totalSum" runat="server"></asp:Label>
     <br />
     <br />
 
     <input type="hidden" name="upload" value="1" />
-    <input type="hidden" name="return" value="http://localhost:50750/pages/index.aspx" />
+    <input type="hidden" name="return" value="http://localhost:50750/pages/CompletedOrder.aspx" />
     <input type="hidden" name="cmd" value="_cart" />
     <input type="hidden" name="business" value="payment@megastore.com" />
     <input type="hidden" name="currency_code" value="SEK" />
