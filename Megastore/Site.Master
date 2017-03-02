@@ -101,7 +101,7 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <li>
-                            <asp:TextBox ID="searchBox" runat="server" class="form-control" Text="Search" CausesValidation="false"></asp:TextBox>
+                            <asp:TextBox ID="searchBox" runat="server" class="form-control" placeholder="Search" CausesValidation="false"></asp:TextBox>
                             
                         </li>
                         

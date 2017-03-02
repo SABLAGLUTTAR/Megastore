@@ -157,6 +157,7 @@
     <Content Include="pages\Admins.aspx" />
     <Content Include="pages\AdvancedSearch.aspx" />
     <Content Include="pages\cart.aspx" />
+    <Content Include="pages\CompletedOrder.aspx" />
     <Content Include="pages\Index.aspx" />
     <Content Include="images\Products\eu4.png" />
     <Content Include="pages\PasswordRecovery.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="pages\cart.aspx.designer.cs">
       <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\CompletedOrder.aspx.cs">
+      <DependentUpon>CompletedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\CompletedOrder.aspx.designer.cs">
+      <DependentUpon>CompletedOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
