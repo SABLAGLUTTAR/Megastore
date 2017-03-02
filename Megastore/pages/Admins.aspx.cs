@@ -16,6 +16,7 @@ namespace Megastore.pages
             
             if (!Page.IsPostBack)
             {
+
                 labelTotalUsers.Text = allCustomers();
                 labelTotalProducts.Text = allProducts();
             }
@@ -28,6 +29,7 @@ namespace Megastore.pages
             string cust = custList.Count.ToString();
 
             return cust;
+            
         }
 
         public String allProducts()

@@ -15,6 +15,7 @@ namespace Megastore
             {
                 if (Request.Cookies["true"] != null)
                 {
+                    
                     string name = Request.Cookies["username"].Value.ToString();
                     //Response.Redirect("SignedIn.aspx", true);
                     LoginView1.Visible = false;
@@ -22,6 +23,7 @@ namespace Megastore
                     Welcome.Visible = true;
                     Welcome.Text = "Welcome " + name;
                 }
+                
             }
         }
 
@@ -47,6 +49,9 @@ namespace Megastore
         protected void Welcome_Click(object sender, EventArgs e)
         {
             Response.Redirect("SignedIn.aspx", true);
+            
         }
+
+      
     }
 }

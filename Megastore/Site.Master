@@ -137,7 +137,7 @@
                             </asp:LoginView>
                         </li>
 
-                        <li><a href="cart.aspx">Cart</a></li>
+                        <li><a id="cartlink" href="cart.aspx">Cart</a></li>
                     </ul>
 
                 </div>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Megastore.pages
+namespace Megastore
 {
-    public class ShipmentModel
+    public class ShipmentModels
     {
         public String CreateShipment(shipment ship)
         {
@@ -89,6 +89,4 @@ namespace Megastore.pages
             }
         }
     }
-
-    
 }
