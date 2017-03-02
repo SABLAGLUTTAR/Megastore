@@ -79,5 +79,23 @@ namespace Megastore.pages
                 return "Error:" + e;
             }
         }
+
+        public List<product> GetAllProducts()
+        {
+            try
+            {
+                using (etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities())
+                {
+                    List<product> products = (from x in db.products select x).ToList();
+                    return products;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+
     }
 }

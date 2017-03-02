@@ -96,5 +96,21 @@ namespace Megastore.pages
                 return null;
             }
         }
+
+        public List<customer> GetAllCustomers()
+        {
+            try
+            {
+                using (etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities())
+                {
+                    List<customer> customers = (from x in db.customers select x).ToList();
+                    return customers;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

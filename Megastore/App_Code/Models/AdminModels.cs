@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Megastore.pages
+namespace Megastore
 {
-    public class Admin
+    public class AdminModels
     {
-
         public string AddAdmin(admin admin)
         {
             try

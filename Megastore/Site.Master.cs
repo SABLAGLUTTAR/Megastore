@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,19 +15,15 @@ namespace Megastore
             {
                 if (Request.Cookies["true"] != null)
                 {
+                    
                     string name = Request.Cookies["username"].Value.ToString();
                     //Response.Redirect("SignedIn.aspx", true);
                     LoginView1.Visible = false;
                     LinkButton1.Visible = true;
                     Welcome.Visible = true;
-
                     Welcome.Text = "Welcome " + name;
                 }
-                if ((ArrayList)Session["cartList"] != null)
-                {
-
-
-                }
+                
             }
         }
 
@@ -54,11 +49,9 @@ namespace Megastore
         protected void Welcome_Click(object sender, EventArgs e)
         {
             Response.Redirect("SignedIn.aspx", true);
+            
         }
 
-        protected void Cart_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("cart.aspx", true);
-        }
+      
     }
 }

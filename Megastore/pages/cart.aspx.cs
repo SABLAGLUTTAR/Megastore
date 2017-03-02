@@ -49,7 +49,7 @@ namespace Megastore.pages
         protected void RemoveSelected(object sender, GridViewDeleteEventArgs e)
         {
             ArrayList cartList = (ArrayList)Session["cartList"];
-
+            
             GridViewRow row = (GridViewRow)CartGrid.Rows[e.RowIndex];
 
             String name = row.Cells[0].Text;
