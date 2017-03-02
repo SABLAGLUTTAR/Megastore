@@ -19,6 +19,8 @@ namespace Megastore.pages
 
                 labelTotalUsers.Text = allCustomers();
                 labelTotalProducts.Text = allProducts();
+                labelTotalOrders.Text = allShipments();
+                labelOrdersValue.Text = totalOrdersValue().ToString();
             }
         }
 
@@ -41,15 +43,29 @@ namespace Megastore.pages
             return prod;
         }
 
-       /* public String allShipments()
+        public String allShipments()
         {
-            
-            List<shipment> shipList = a.Add
-            string ship = prodList.Count.ToString();
+            ShipmentModels s = new ShipmentModels();
+            List<shipment> shipList = s.GetAllShipments();
+            string ship = shipList.Count.ToString();
 
             return ship;
         }
-        */
+
+        public decimal totalOrdersValue()
+        {
+            decimal totalSum = 0;
+            ShipmentModels s = new ShipmentModels();
+            List<shipment> shipList = s.GetAllShipments();
+
+            for (int i = 0; i < shipList.Count; i++)
+            {
+                shipment ship = shipList[i];
+                totalSum = totalSum + (decimal)ship.final_price;
+            }
+            return totalSum;
+        }
+        
 
     }
 }

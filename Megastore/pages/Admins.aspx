@@ -51,21 +51,21 @@
       
       <td>Orders this week</td>
       <td>
-          <asp:Label ID="labelOrdersWeek" runat="server" Text="Label"></asp:Label>
+          <asp:Label ID="labelOrdersWeek" runat="server" Text="N/A"></asp:Label>
          </td>
     </tr>
      <tr>
       
       <td>Orders this month</td>
       <td>
-          <asp:Label ID="labelOrdersMonth" runat="server" Text="Label"></asp:Label>
+          <asp:Label ID="labelOrdersMonth" runat="server" Text="N/A"></asp:Label>
          </td>
     </tr>
      <tr>
       
       <td>Order this year</td>
       <td>
-          <asp:Label ID="labelTotalYear" runat="server" Text="Label"></asp:Label>
+          <asp:Label ID="labelTotalYear" runat="server" Text="N/A"></asp:Label>
          </td>
     </tr>
      <tr>
