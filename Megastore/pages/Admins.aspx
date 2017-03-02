@@ -27,7 +27,7 @@
       
       <td>Registered users</td>
       <td>
-          <asp:Label ID="labelTotalUsers" runat="server" Text="Label"></asp:Label>
+          <asp:Label ID="labelTotalUsers" runat="server" Text="Label" ></asp:Label>
         </td>
     </tr>
     <tr>
@@ -112,13 +112,13 @@
     <br />
     <h1>Add an administrator</h1>
     
-            <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="form-control" hint="Email"></asp:TextBox>
+            <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
             <br />
-    <asp:TextBox ID="TextBoxFirstName" runat="server" CssClass="form-control" hint="Firstname"></asp:TextBox>
+    <asp:TextBox ID="TextBoxFirstName" runat="server" CssClass="form-control" placeholder="Firstname"></asp:TextBox>
     <br />
-    <asp:TextBox ID="TextBoxLastName" runat="server" CssClass="form-control" hint="Lastname"></asp:TextBox>
+    <asp:TextBox ID="TextBoxLastName" runat="server" CssClass="form-control" placeholder="Lastname"></asp:TextBox>
     <br />
-    <asp:TextBox ID="TextBoxPass" runat="server" CssClass="form-control" hint="Password"></asp:TextBox>
+    <asp:TextBox ID="TextBoxPass" runat="server" CssClass="form-control" placeholder="Password"></asp:TextBox>
     <br />
     <asp:Button ID="ButtonAddAdmin" runat="server" OnClick="Button1_Click" Text="Button" Width="127px" />
         
