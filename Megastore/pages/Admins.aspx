@@ -120,7 +120,7 @@
     <br />
     <asp:TextBox ID="TextBoxPass" runat="server" CssClass="form-control" placeholder="Password"></asp:TextBox>
     <br />
-    <asp:Button ID="ButtonAddAdmin" runat="server" OnClick="Button1_Click" Text="Button" Width="127px" />
+    <asp:Button ID="ButtonAddAdmin" runat="server" CssClass="btn btn-default" OnClick="Button1_Click" Text="Add" Width="127px" />
         
     <h1>Latest orders</h1>
 
