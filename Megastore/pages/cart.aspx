@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
 
-    <asp:GridView ID="CartGrid"  runat="server" AutoGenerateColumns="false" OnRowDeleting="RemoveSelected"  ShowHeader="False" CssClass="table" Font-Bold="true" AllowSorting="true" GridLines="None" Width="100%" CellPadding="5" BorderStyle="None">
+    <asp:GridView ID="CartGrid" runat="server" AutoGenerateColumns="false" OnRowDeleting="RemoveSelected" ShowHeader="False" CssClass="table" Font-Bold="true" AllowSorting="true" GridLines="None" Width="100%" CellPadding="5" BorderStyle="None">
         <Columns>
             <asp:BoundField DataField="product_name" HeaderText="Name" />
             <asp:BoundField DataField="price_per_unit" HeaderText="Price" />
@@ -38,25 +38,36 @@
     <input type="hidden" name="currency_code" value="SEK" />
 
     <% 
-        ArrayList cartList = (ArrayList)Session["cartList"];
-        int count = 0;
 
-        for (int i = 0; i < cartList.Count; i++)
+        ArrayList cartList = (ArrayList)Session["cartList"];
+
+        HttpCookie cookie = Request.Cookies["username"];
+        if (cartList != null && cookie != null)
         {
-            Megastore.product p = (Megastore.product)cartList[i];
+
+            for (int i = 0; i < cartList.Count; i++)
+            {
+                Megastore.product p = (Megastore.product)cartList[i];
 
     %>
     <input type="hidden" name="item_name_<%=i + 1 %>" value="<%=p.product_name%>" />
     <input type="hidden" name="amount_<%=i + 1 %>" value="<%=p.price_per_unit%>" />
     <input type="hidden" name="quantity_<%=i + 1 %>" value="1" />
     <%
-            
         }
     %>
 
-
-
     <asp:Button ID="checkbtn" Text="Complete purchase" runat="server" PostBackUrl="https://www.sandbox.paypal.com/cgi-bin/webscr" OnClick="checkoutBtnClick" />
-    ADD LOGIN CONTROL TO THIS BUTTON
+    <%
 
+        }
+        else
+        {
+
+    %>
+
+    <asp:Label ID="cartEmptyLabel" runat="server" Text="Add items / or Login to be able to checkout" />
+    <%
+        }
+    %>
 </asp:Content>
