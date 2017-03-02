@@ -29,37 +29,51 @@
     <tr>
       
       <td>Registered users</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelTotalUsers" runat="server" Text="Label"></asp:Label>
+        </td>
     </tr>
     <tr>
       
       <td>Total products in stock</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelTotalProducts" runat="server" Text="Label"></asp:Label>
+        </td>
     </tr>
      <tr>
       
       <td>Total orders</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelTotalOrders" runat="server" Text="Label"></asp:Label>
+         </td>
     </tr>
      <tr>
       
       <td>Orders this week</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelOrdersWeek" runat="server" Text="Label"></asp:Label>
+         </td>
     </tr>
      <tr>
       
       <td>Orders this month</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelOrdersMonth" runat="server" Text="Label"></asp:Label>
+         </td>
     </tr>
      <tr>
       
       <td>Order this year</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelTotalYear" runat="server" Text="Label"></asp:Label>
+         </td>
     </tr>
      <tr>
       
       <td>Value of all orders</td>
-      <td>N/A</td>
+      <td>
+          <asp:Label ID="labelOrdersValue" runat="server" Text="Label"></asp:Label>
+         </td>
     </tr>
   </tbody>
 </table> 
