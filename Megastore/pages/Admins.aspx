@@ -7,14 +7,33 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
 
-    <div class="alert alert-dismissible alert-success">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Access granted!</strong><a> You can now as an admin alter information regarding megastore</a>.
-</div>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
+<div class="container-fluid">
+  
 
-    <h1>General statistics</h1>
-    <table class="table table-striped table-hover ">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Statistics</a></li>
+    <li><a data-toggle="tab" href="#menu1">Manage admin accounts</a></li>
+    <li><a data-toggle="tab" href="#menu2">Manage customer accounts</a></li>
+    <li><a data-toggle="tab" href="#menu3">Manage products</a></li>
+    <li><a data-toggle="tab" href="#menu4">Manage orders</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>General statistics</h3>
+      <table class="table table-striped table-hover ">
   <thead>
     <tr>
       
@@ -74,13 +93,12 @@
     </tr>
   </tbody>
 </table> 
-    <br />
-    <br />
-    <br />
-    <h1>All administrators 
-    </h1>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Administrator accounts</h3>
         <br />
-    <asp:GridView ID="GridView1" CssClass="table table-striped table-hover"  GridLines="None" runat="server" DataSourceID="SqlDataSource1">
+        <br />
+      <asp:GridView ID="GridView1" CssClass="table table-striped table-hover" onrowdatabound="GridView1_RowDataBound" GridLines="None" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
@@ -108,11 +126,10 @@
             
         </UpdateParameters>
     </asp:SqlDataSource>
-    <br />
-    <br />
-    <h1>Add an administrator</h1>
-    
-            <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
+        <br />
+        <br />
+        <h3>Add another administrator</h3>
+        <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
             <br />
     <asp:TextBox ID="TextBoxFirstName" runat="server" CssClass="form-control" placeholder="Firstname"></asp:TextBox>
     <br />
@@ -121,7 +138,65 @@
     <asp:TextBox ID="TextBoxPass" runat="server" CssClass="form-control" placeholder="Password"></asp:TextBox>
     <br />
     <asp:Button ID="ButtonAddAdmin" runat="server" CssClass="btn btn-default" OnClick="Button1_Click" Text="Add" Width="127px" />
-        
-    <h1>Latest orders</h1>
+
+
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Customer accounts</h3>
+        <br />
+        <br />
+        <asp:GridView ID="GridView2" CssClass="table table-striped table-hover" onrowdatabound="GridView2_RowDataBound" GridLines="None" runat="server" DataSourceID="SqlDataSource2">
+        <Columns>
+            <asp:CommandField ShowDeleteButton="True" />
+        </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:dataConn %>" DeleteCommand="DELETE FROM customer WHERE customer_email = ? AND ((first_name = ?) OR (first_name IS NULL AND ? IS NULL)) AND ((last_name = ?) OR (last_name IS NULL AND ? IS NULL)) AND ((customer_address = ?) OR (customer_address IS NULL AND ? IS NULL))" InsertCommand="INSERT INTO customer (first_name, last_name, customer_address, customer_email) VALUES (?, ?, ?, ?)" OldValuesParameterFormatString="original_{0}" ProviderName="<%$ ConnectionStrings:dataConn.ProviderName %>" SelectCommand="SELECT first_name, last_name, customer_address, customer_email FROM customer" UpdateCommand="UPDATE customer SET first_name = ?, last_name = ?, customer_address = ? WHERE customer_email = ? AND ((first_name = ?) OR (first_name IS NULL AND ? IS NULL)) AND ((last_name = ?) OR (last_name IS NULL AND ? IS NULL)) AND ((customer_address = ?) OR (customer_address IS NULL AND ? IS NULL))">
+            <DeleteParameters>
+                <asp:Parameter Name="original_customer_email" Type="String" />
+                <asp:Parameter Name="original_first_name" Type="String" />
+                <asp:Parameter Name="original_last_name" Type="String" />
+                <asp:Parameter Name="original_last_name" Type="String" />
+                <asp:Parameter Name="original_customer_address" Type="String" />
+                <asp:Parameter Name="original_customer_address" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="first_name" Type="String" />
+                <asp:Parameter Name="last_name" Type="String" />
+                <asp:Parameter Name="customer_address" Type="String" />
+                <asp:Parameter Name="customer_email" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="first_name" Type="String" />
+                <asp:Parameter Name="last_name" Type="String" />
+                <asp:Parameter Name="customer_address" Type="String" />
+                <asp:Parameter Name="original_customer_email" Type="String" />
+                <asp:Parameter Name="original_first_name" Type="String" />
+                <asp:Parameter Name="original_first_name" Type="String" />
+                <asp:Parameter Name="original_last_name" Type="String" />
+                <asp:Parameter Name="original_last_name" Type="String" />
+                <asp:Parameter Name="original_customer_address" Type="String" />
+                <asp:Parameter Name="original_customer_address" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+      
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Manage products</h3>
+        <br />
+        <br />
+      
+    </div>
+      <div id="menu4" class="tab-pane fade">
+      <h3>Manage orders</h3>
+      <br />
+      <br />
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+      
 
 </asp:Content>
