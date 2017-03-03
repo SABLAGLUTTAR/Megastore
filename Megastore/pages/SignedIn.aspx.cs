@@ -46,7 +46,7 @@ namespace Megastore.pages
 
         protected void Orderbtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MyOrders.aspx?email=" + Request.Cookies["username"].Value.ToString());
+            Response.Redirect("MyOrders.aspx");
         }
     }
 }
