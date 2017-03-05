@@ -158,6 +158,7 @@
     <Content Include="pages\AdvancedSearch.aspx" />
     <Content Include="pages\cart.aspx" />
     <Content Include="pages\CompletedOrder.aspx" />
+    <Content Include="pages\Contact.aspx" />
     <Content Include="pages\Index.aspx" />
     <Content Include="images\Products\eu4.png" />
     <Content Include="pages\MyOrders.aspx" />
@@ -266,6 +267,13 @@
     </Compile>
     <Compile Include="pages\CompletedOrder.aspx.designer.cs">
       <DependentUpon>CompletedOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
