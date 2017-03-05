@@ -274,6 +274,7 @@
     <Compile Include="pages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\MailClass.cs" />
     <Compile Include="pages\MyOrders.aspx.cs">
       <DependentUpon>MyOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

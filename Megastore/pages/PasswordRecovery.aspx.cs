@@ -20,27 +20,13 @@ namespace Megastore.pages
 
         public void SendMail()
         {
-            // Gmail Address from where you send the mail
-            var fromAddress = "megastorehkr@gmail.com";
             // any address where the email will be sending
             var toAddress = YourEmail.Text.ToString();
-            //Password of your gmail address
-            const string fromPassword = "Asdasd123";
-            // Passing the values and make a email formate to display
+            // Passing the values 
             string subject = "Password Recovery";
             string body = "Your password is " + password;
-            // smtp settings
-            var smtp = new System.Net.Mail.SmtpClient();
-            {
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-                smtp.Timeout = 20000;
-            }
-            // Passing values to smtp object
-            smtp.Send(fromAddress, toAddress, subject, body);
+            MailClass.MailSender(toAddress, subject, body);
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -54,6 +40,8 @@ namespace Megastore.pages
             if (cust != null)
             {
                 password = cust.customer_password;
+                DisplayMessage.Text = "Password sent to your email!";
+                DisplayMessage.Visible = true;
                 SendMail();
             }
 
