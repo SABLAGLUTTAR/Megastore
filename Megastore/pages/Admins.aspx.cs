@@ -14,12 +14,11 @@ namespace Megastore.pages
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            if (!Page.IsPostBack)
-            {
+           
 
                 fillStatistics();
-
-            }
+        
+            
         }
 
         public void fillStatistics()
@@ -28,6 +27,8 @@ namespace Megastore.pages
             labelTotalProducts.Text = allProducts();
             labelTotalOrders.Text = allShipments();
             labelOrdersValue.Text = totalOrdersValue().ToString();
+            
+            
         }
 
         public String allCustomers()
@@ -105,36 +106,16 @@ namespace Megastore.pages
             TextBoxLastName.Text = "";
             TextBoxPass.Text = "";
 
+            
 
 
-            GridView1.DataBind();
+
 
         }
 
-        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void AddProduct_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[1].Text = "Email";
-                e.Row.Cells[2].Text = "Firstname";
-                e.Row.Cells[3].Text = "Lastname";
-            }
-        }
-
-        protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[1].Text = "Firstname";
-                e.Row.Cells[2].Text = "Lastname";
-                e.Row.Cells[3].Text = "Address";
-                e.Row.Cells[4].Text = "Email";
-            }
+            Response.Redirect("ManageProduct.aspx");
         }
     }
 }

@@ -51,6 +51,8 @@ namespace Megastore.pages
                 p.image_url = product.image_url;
                 p.stock = product.stock;
                 p.price_per_unit = product.price_per_unit;
+                p.categories_catogories_id = product.categories_catogories_id;
+                p.product_type_idproduct_type = product.product_type_idproduct_type;
 
                 db.SaveChanges();
                 return product.product_name + " was successfully updated";

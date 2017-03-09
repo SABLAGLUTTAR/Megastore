@@ -161,6 +161,7 @@
     <Content Include="pages\Contact.aspx" />
     <Content Include="pages\Index.aspx" />
     <Content Include="images\Products\eu4.png" />
+    <Content Include="pages\ManageProduct.aspx" />
     <Content Include="pages\MyOrders.aspx" />
     <Content Include="pages\PasswordRecovery.aspx" />
     <Content Include="pages\ProductDetails.aspx" />
@@ -283,6 +284,13 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\MailClass.cs" />
+    <Compile Include="pages\ManageProduct.aspx.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\ManageProduct.aspx.designer.cs">
+      <DependentUpon>ManageProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\MyOrders.aspx.cs">
       <DependentUpon>MyOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
