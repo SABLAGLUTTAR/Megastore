@@ -15,7 +15,6 @@ namespace Megastore
             {
                 if (Request.Cookies["true"] != null)
                 {
-                    
                     string name = Request.Cookies["username"].Value.ToString();
                     //Response.Redirect("SignedIn.aspx", true);
                     LoginView1.Visible = false;

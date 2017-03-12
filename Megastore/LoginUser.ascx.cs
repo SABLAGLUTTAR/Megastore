@@ -53,7 +53,6 @@ namespace Megastore
                     Response.Cookies["true"].Expires = DateTime.Now.AddDays(1);
                     Response.Cookies["username"].Value = username;
                     Response.Cookies["username"].Expires = DateTime.Now.AddDays(1);
-                    
                     Response.Redirect("Index.aspx", true);
                     Login1.Visible = false;
 

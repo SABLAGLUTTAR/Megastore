@@ -7,6 +7,22 @@ namespace Megastore
 {
     public class AdminModels
     {
+        public admin GetAdmin(string id)
+        {
+            try
+            {
+                using (etvffqgz_megastoreEntities db = new etvffqgz_megastoreEntities())
+                {
+                    admin ifadmin = db.admins.Find(id);
+                    return ifadmin;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public string AddAdmin(admin admin)
         {
             try

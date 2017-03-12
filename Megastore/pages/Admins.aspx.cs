@@ -13,12 +13,24 @@ namespace Megastore.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-           
-
-                fillStatistics();
-        
-            
+            if (Request.Cookies["username"] != null && Request.Cookies["true"] != null)
+            {
+                string username = Request.Cookies["username"].Value.ToString();
+                AdminModels am = new AdminModels();
+                admin isAdmin = am.GetAdmin(username);
+                if (isAdmin != null)
+                {
+                    fillStatistics();
+                }
+                else
+                {
+                    Response.Redirect("Index.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("Index.aspx");
+            }
         }
 
         public void fillStatistics()
@@ -27,8 +39,8 @@ namespace Megastore.pages
             labelTotalProducts.Text = allProducts();
             labelTotalOrders.Text = allShipments();
             labelOrdersValue.Text = totalOrdersValue().ToString();
-            
-            
+
+
         }
 
         public String allCustomers()
@@ -38,7 +50,7 @@ namespace Megastore.pages
             string cust = custList.Count.ToString();
 
             return cust;
-            
+
         }
 
         public String allProducts()
@@ -80,9 +92,9 @@ namespace Megastore.pages
 
         protected void RemoveSelected(object sender, GridViewDeleteEventArgs e)
         {
-            
 
-            
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -106,7 +118,7 @@ namespace Megastore.pages
             TextBoxLastName.Text = "";
             TextBoxPass.Text = "";
 
-            
+
 
 
 

@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contentBody" runat="server">
     <h1>Advanced Search</h1>
     <div class="searchfilter">
-        <asp:DropDownList ID="ddlSubject" AutoPostBack="true" runat="server">
+        <asp:DropDownList ID="ddlSubject" AutoPostBack="false" runat="server">
             <asp:ListItem Text="<Select category>" disabled="disabled" Value="0" />
             <asp:ListItem>Movie</asp:ListItem>
             <asp:ListItem>Game</asp:ListItem>
